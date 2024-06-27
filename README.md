@@ -8,7 +8,7 @@ The website allows a photographer to create a profile and showcase their work th
 
 ### Problem
 
-Photographers need an easy and visually appealing way to showcase their work online. Existing platforms may not offer enough customization or might be too complex for users to navigate and maintain.
+Photographers need a user-friendly and visually appealing platform to showcase their work online. Existing platforms often lack the simplicity or are too complex for users to navigate and maintain. This can make it difficult for photographers to effectively present their portfolios and attract potential clients. The challenge is to develop a website that combines ease of use and aesthetic appeal to meet the needs of photographers.
 
 ### User Profile
 
@@ -32,17 +32,29 @@ Photographers need an easy and visually appealing way to showcase their work onl
 ### Tech Stack
 <!-- List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations. -->
 
-Frontend: HTML, CSS, JavaScript, React.js
-Backend: Node.js, Express.js
-Database: MySQL with Knex.js for query building
-External Libraries: Cloudinary (for image storage and management)
+Frontend
+HTML
+CSS
+JavaScript
+React.js
+
+Backend
+Node.js
+Express.js
+
+Database
+MySQL with Knex.js for query building
+
+External Libraries (Store and serve user-generated content like images)
+Cloudinary
+Firebase Storage
 
 Limitations:
-Cloudinary: Depending on the free tier, you might face limitations in terms of storage space, API call limits, or bandwidth.
+Cloudinary and Firebase Storage: Limitations in terms of storage space, API call limits, or bandwidth.
 
 ### APIs
 
-Cloudinary API: For image upload and management or own image server.
+Cloudinary/Firebase Storage API: For image upload and management
 
 ### Sitemap
 <!-- List the pages of your app with brief descriptions. You can show this visually, or write it out. -->

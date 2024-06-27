@@ -1,5 +1,5 @@
 # Project Title
-PIXELHIVE
+PhotoNest
 Photographer Portfolio Showcase Website
 
 ## Overview

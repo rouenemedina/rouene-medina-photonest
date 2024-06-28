@@ -3,7 +3,7 @@ PhotoNest
 Photographer Portfolio Showcase Website
 
 ## Overview
-
+<!-- Single sentence like a pitch.-->
 The website allows a photographer to create a profile and showcase their work through portfolios. It serves as a platform for a photographer to display their skills and for potential clients to browse and connect with them.
 
 ### Problem
@@ -14,12 +14,15 @@ Photographers need a user-friendly and visually appealing platform to showcase t
 
 2 Types of Users:
 * Photographer: Users of the website will primarily be a photographer looking to showcase their work. 
+<!-- What problems are we solving for them  -->
 * Clients: Potential clients seeking to hire a photographer.
 
 * The app must provide an intuitive interface for a photographer to upload and organize their photos, and a seamless browsing experience for visitors.
 
 ### Features
 <!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
+
+<!-- Put yourself as the user of your app and then what problems would you like to be solved. Describe it as much as possible-->
 
 * Photographer Profile: Photographer can create and manage personal profile.
 * Portfolio Creation: Photographer can upload and organize their photos into portfolios.
@@ -45,6 +48,14 @@ Express.js
 Database
 MySQL with Knex.js for query building
 
+Client Libraries
+react
+react-router
+axios
+
+Server libraries
+express
+
 External Libraries (Store and serve user-generated content like images)
 Cloudinary
 Firebase Storage
@@ -66,20 +77,29 @@ Cloudinary/Firebase Storage API: For image upload and management
 
 ### Mockups
 <!-- Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches. -->
+HOME PAGE
 ![Home Page](assets/images/homePage.png)
+
+CONTACT PAGE
 ![Contact and Login Page](assets/images/contact-loginPage.png)
+
+PROFILE PAGE
 ![Profile Page Option1](assets/images/profilePage1.png)
 ![Profile Page Option2](assets/images/profilePage2.png)
+
+PORTFOLIO SECTION
 ![Portfolio section](assets/images/portfolioView.png)
 
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
+<!-- drawSQL to visualize relationships -->
 
 * Users: Contains user profiles (photographers)
 * Portfolios: Stores details of each portfolio, including title, description, and associated images.
 * Images: Metadata for images uploaded by photographers.
 
 ### Endpoints
+<!-- In the final readMe can include the endpoint, short description, parameters, and response body -->
 * POST /api/portfolios: Create a new portfolio.
 * GET /api/portfolios: Retrieve portfolios.
 * GET /api/portfolios/: Retrieve a specific portfolio.
@@ -93,7 +113,8 @@ Cloudinary/Firebase Storage API: For image upload and management
 
 
 ## Roadmap
-<!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. -->
+<!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. 
+This could be in Jira -->
 
 Week 1: Planning and Backend Development
 * Set up database schema and APIs for portfolio creation, and image management.
@@ -117,10 +138,10 @@ Features:
 * Login/Register: Pages for user authentication.
 * Search Functionality: Visitors can search for a photographer by name, location, or specialty.
 * Advanced Search Filters: Allow visitors to filter a photographer by various criteria such as price range, location, and style.
-* Comment and Like System: Users can leave comments and likes on photos or portfolios.
-* Social Media Integration: Photographers can link their social media profiles.
 * Booking System: Enable clients to book sessions with a photographer directly through the website.
 * Blog Section: Allow a photographer to post articles or updates.
+* Comment and Like System: Users can leave comments and likes on photos or portfolios.
+* Social Media Integration: Photographers can link their social media profiles.
 
 Sitemap:
 * Search Results: Page to display search results based on user queries.

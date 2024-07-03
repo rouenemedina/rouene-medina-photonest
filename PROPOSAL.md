@@ -11,13 +11,22 @@ The website allows a photographer to create a profile and showcase their work th
 Photographers need a user-friendly and visually appealing platform to showcase their work online. Existing platforms often lack the simplicity or are too complex for users to navigate and maintain. This can make it difficult for photographers to effectively present their portfolios and attract potential clients. The challenge is to develop a website that combines ease of use and aesthetic appeal to meet the needs of photographers.
 
 ### User Profile
+<!-- What problems are we solving for them  -->
 
 2 Types of Users:
 * Photographer: Users of the website will primarily be a photographer looking to showcase their work. 
-<!-- What problems are we solving for them  -->
-* Clients: Potential clients seeking to hire a photographer.
+    * One page per photographer, that is accessible through their photos in the homepage. 
+    * Showcase their work through the platform by uploading images.
+    * The app must provide an intuitive interface for a photographer to upload and organize their photos.
+    * Engage in social interactions through comments and likes.
+    * Communicate with potential clients through the contact form. 
 
-* The app must provide an intuitive interface for a photographer to upload and organize their photos, and a seamless browsing experience for visitors.
+* Clients: Potential clients seeking to hire a photographer.
+    * Browse through different portfolios
+    * A seamless browsing experience for visitors.
+    * Possibly engage in social interactions through comments and likes
+    * Communicate with the photographers through a contact form
+
 
 ### Features
 <!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
@@ -97,6 +106,9 @@ PORTFOLIO SECTION
 * Users: Contains user profiles (photographers)
 * Portfolios: Stores details of each portfolio, including title, description, and associated images.
 * Images: Metadata for images uploaded by photographers.
+
+<!-- What should be in my Database -->
+* 
 
 ### Endpoints
 <!-- In the final readMe can include the endpoint, short description, parameters, and response body -->

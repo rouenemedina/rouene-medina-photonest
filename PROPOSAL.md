@@ -21,7 +21,7 @@ Photographers need a user-friendly and visually appealing platform to showcase t
     * Engage in social interactions through comments and likes.
     * Communicate with potential clients through the contact form. 
 
-* Clients: Potential clients seeking to hire a photographer.
+* Client: Potential clients seeking to hire a photographer.
     * Browse through different portfolios
     * A seamless browsing experience for visitors.
     * Possibly engage in social interactions through comments and likes
@@ -102,13 +102,7 @@ PORTFOLIO SECTION
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
 <!-- drawSQL to visualize relationships -->
-
-* Users: Contains user profiles (photographers)
-* Portfolios: Stores details of each portfolio, including title, description, and associated images.
-* Images: Metadata for images uploaded by photographers.
-
-<!-- What should be in my Database -->
-* 
+![Data](assets/mockup/Data.png)
 
 ### Endpoints
 <!-- In the final readMe can include the endpoint, short description, parameters, and response body -->

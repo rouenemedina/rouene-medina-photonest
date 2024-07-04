@@ -1,0 +1,16 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+body {
+  font-family: "Avenir";
+  font-weight: 400;
+}
+
+:root {
+  font-size: 100% !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}

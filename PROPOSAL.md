@@ -87,22 +87,22 @@ Cloudinary/Firebase Storage API: For image upload and management
 ### Mockups
 <!-- Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches. -->
 HOME PAGE
-![Home Page](assets/images/homePage.png)
+![Home Page](src/assets/images/homePage.png)
 
 CONTACT PAGE
-![Contact and Login Page](assets/images/contact-loginPage.png)
+![Contact and Login Page](src/assets/images/contact-loginPage.png)
 
 PROFILE PAGE
-![Profile Page Option1](assets/images/profilePage1.png)
-![Profile Page Option2](assets/images/profilePage2.png)
+![Profile Page Option1](src/assets/images/profilePage1.png)
+![Profile Page Option2](src/assets/images/profilePage2.png)
 
 PORTFOLIO SECTION
-![Portfolio section](assets/images/portfolioView.png)
+![Portfolio section](src/assets/images/portfolioView.png)
 
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
 <!-- drawSQL to visualize relationships -->
-![Data](assets/mockup/Data.png)
+![Data](src/assets/mockup/Data.png)
 
 ### Endpoints
 <!-- In the final readMe can include the endpoint, short description, parameters, and response body -->

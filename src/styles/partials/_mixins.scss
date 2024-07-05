@@ -11,3 +11,10 @@
     @content;
   }
 }
+
+@mixin hover-style {
+  color: $primary-Peachcrayon;
+  background-color: $background-eerieblack;
+  border: 1px solid $background-eerieblack;
+  cursor: pointer;
+}

@@ -2,14 +2,15 @@ import "./Buttons.scss";
 import React from "react";
 
 function Buttons({
-  showLearnMore,
+  showPrimary,
   showSecondary,
-  showDelete,
-  showEdit,
+  showSubmit,
+  showSignUp,
+  showLogIn,
 }) {
   return (
     <div>
-      {showLearnMore && (
+      {showPrimary && (
         <button type="submit" className="button__primary">
           LEARN MORE
         </button>
@@ -19,14 +20,19 @@ function Buttons({
           Cancel
         </button>
       )}
-      {showDelete && (
-        <button type="submit" className="button__delete">
-          Delete
+      {showSubmit && (
+        <button type="submit" className="button__submit">
+          Submit
         </button>
       )}
-      {showEdit && (
-        <button type="submit" className="button__edit">
-          Edit
+      {showSignUp && (
+        <button type="submit" className="button__signup">
+          Sign Up
+        </button>
+      )}
+      {showLogIn && (
+        <button type="submit" className="button__login">
+          Log In
         </button>
       )}
     </div>

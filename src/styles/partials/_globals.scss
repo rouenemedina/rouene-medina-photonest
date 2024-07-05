@@ -1,8 +1,9 @@
 @use "../partials/mixins" as *;
 @use "../partials/variables" as *;
+@use "../partials/typography" as *;
 
 body {
-  font-family: "Avenir";
+  font-family: "Montserrat";
   font-weight: 400;
 }
 
@@ -15,8 +16,9 @@ body {
   margin: 0;
 }
 
-/page header
+//page header
 h1 {
+  font-family: "Cardo";
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;

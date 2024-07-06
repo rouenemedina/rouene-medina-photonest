@@ -2,7 +2,7 @@ import "./SignUpPage.scss";
 import React from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
 function SignUpPage() {
@@ -14,9 +14,16 @@ function SignUpPage() {
     user_type: "photographer",
   });
   const [formErrors, setFormErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   const navigate = useNavigate();
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  
   //validate formData
   const validateFormData = (data) => {
     const errors = {};
@@ -26,7 +33,8 @@ function SignUpPage() {
       errors.user_last_name = "Please enter your last name.";
     if (!data.user_email)
       errors.user_email = "Please enter your email address.";
-    if (!data.user_password) errors.user_password = "Please enter a password.";
+    if (!data.user_password) 
+      errors.user_password = "Please enter a password.";
     if (!data.user_type)
       errors.user_type = "Please specify what you want to be.";
 
@@ -34,27 +42,34 @@ function SignUpPage() {
     return errors;
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (
-      !user_first_name ||
-      !user_last_name ||
-      !user_email ||
-      !user_password ||
-      !user_type
-    ) {
-      console.error();
-      return;
-    }
 
     //after submitting we want to check the data if its valid
     //then updated formData to be sent to the server
+    const errorOutput = validateFormData(formData);
+    if (Object.keys(errorOutput).length === 0) {
+      try {
+        const updatedFormData = {
+          user_first_name: formData.user_first_name,
+          user_last_name: formData.user_last_name,
+          user_email: formData.user_email,
+          user_password: formData.user_password,
+          user_type: formData.user_type,
+        };
+        const API_URL = import.meta.env.VITE_APP_API_URL;
+        await axios.post(`${API_URL}/auth/register`, updatedFormData);
+        setSuccess(true);
+        setError(null);
+        handleReset();
+      } catch (err) {
+        console.log(err);
+        setSuccess(false);
+        setError(error.response.data);
+      }
+    } else {
+        //TODO: error handling
+    }
   };
 
   const handleReset = () => {
@@ -69,10 +84,8 @@ function SignUpPage() {
     setRedirect(true);
   };
 
-  if (isLoading) return <p>Loading...</p>;
-
   if (redirect) {
-    navigate("");
+    navigate("/login");
   }
 
   return (
@@ -83,7 +96,7 @@ function SignUpPage() {
             <h1 className="registration__title">CREATE NEW ACCOUNT</h1>
             <div className="registration__card">
               <h3 className="registration__subtitle">Already a member? </h3>
-              <Link to="" className="registration__link">
+              <Link to="/login" className="registration__link">
                 <h3 className="registration__login">Log In</h3>
               </Link>
             </div>
@@ -96,6 +109,8 @@ function SignUpPage() {
             handleSubmit={handleSubmit}
           />
         </article>
+        {success && <div className="registration__message">Signed up!</div>}
+        {error && <div className="resgistration__message">{error}</div>}
       </section>
     </main>
   );

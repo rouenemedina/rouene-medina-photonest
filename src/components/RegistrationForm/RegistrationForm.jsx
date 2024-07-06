@@ -1,11 +1,12 @@
 import "./RegistrationForm.scss";
 import Buttons from "../Buttons/Buttons";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function RegistrationForm({ formData, handleChange, handleSubmit }) {
   return (
     <>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <article className="form__container">
           <div className="form__subcontainer">
             <label htmlFor="user_first_name" className="form__label">
@@ -61,7 +62,6 @@ function RegistrationForm({ formData, handleChange, handleSubmit }) {
             placeholder="Password"
             value={formData.user_password}
             onChange={handleChange}
-            required
           ></input>
         </article>
         <article className="form__card">
@@ -82,8 +82,10 @@ function RegistrationForm({ formData, handleChange, handleSubmit }) {
         </article>
         <article className="form__container"></article>
         <article className="form__btn">
-          <Buttons showSignUp type="submit" onChange={handleSubmit}/>
-          <Buttons showLogIn type="submit" onChange={handleSubmit}/>
+          <Buttons showSignUp type="submit" />
+          <Link to="/login">
+            <Buttons showLogIn />
+          </Link>
         </article>
       </form>
     </>

@@ -11,7 +11,7 @@ function Buttons({
   return (
     <div>
       {showPrimary && (
-        <button type="submit" className="button__primary">
+        <button type="submit" className="button__primary" >
           LEARN MORE
         </button>
       )}

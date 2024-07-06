@@ -35,7 +35,7 @@ function RegistrationForm({
                 required
               ></input>
               {errors.user_first_name && (
-                <span id="firstNameError" class="form__name-error">
+                <span id="firstNameError" class="form__error">
                   {errors.user_first_name}
                 </span>
               )}
@@ -56,7 +56,7 @@ function RegistrationForm({
                 required
               ></input>
               {errors.user_last_name && (
-                <span id="lastNameError" class="form__name-error">
+                <span id="lastNameError" class="form__error">
                   {errors.user_last_name}
                 </span>
               )}
@@ -79,7 +79,7 @@ function RegistrationForm({
               required
             ></input>
              {errors.user_email && (
-                <span id="emailError" class="form__email-error">
+                <span id="emailError" class="form__error">
                   {errors.user_email}
                 </span>
               )}
@@ -100,7 +100,7 @@ function RegistrationForm({
               onChange={handleChange}
             ></input>
             {errors.user_password && (
-                <span id="passwordError" class="form__password-error">
+                <span id="passwordError" class="form__error">
                   {errors.user_password}
                 </span>
               )}
@@ -124,7 +124,7 @@ function RegistrationForm({
               <option value="client">Client</option>
             </select>
             {errors.user_type && (
-                <span id="typeError" class="form__type-error">
+                <span id="typeError" class="form__error">
                   {errors.user_type}
                 </span>
               )}

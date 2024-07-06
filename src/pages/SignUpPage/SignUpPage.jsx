@@ -2,7 +2,7 @@ import "./SignUpPage.scss";
 import React from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
 function SignUpPage() {
@@ -13,11 +13,19 @@ function SignUpPage() {
     user_password: "",
     user_type: "photographer",
   });
+  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
+  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (redirect) {
+      navigate("/login");
+    }
+  }, [redirect, navigate]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -83,10 +91,6 @@ function SignUpPage() {
     setRedirect(true);
   };
 
-  if (redirect) {
-    navigate("/login");
-  }
-
   return (
     <main>
       <section className="registration">
@@ -103,10 +107,11 @@ function SignUpPage() {
         </article>
         <article className="registration__form">
           <RegistrationForm
-            fields={["firstName", "lastName", "email", "password", "userType"]}
             formData={formData}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            fields={["firstName", "lastName", "email", "password", "userType"]}
+            errors={formErrors}
           />
         </article>
         {success && <div className="registration__message">Signed up!</div>}

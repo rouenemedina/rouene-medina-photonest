@@ -12,6 +12,9 @@ function LogInPage() {
     user_email: "",
     user_password: "",
   });
+  //this is for handling errors in the form
+  const [formErrors, setFormErrors] = useState({});
+  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -21,6 +24,7 @@ function LogInPage() {
   };
 
   const handleSubmit = async (event) => {
+    console.log("login clicked");
     event.preventDefault();
 
     try {
@@ -41,10 +45,11 @@ function LogInPage() {
     <main>
       <h1>Welcome!</h1>
       <RegistrationForm
-        fields={["email", "password"]}
         formData={formData}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        fields={["email", "password"]}
+        errors={formErrors}
       />
     </main>
   );

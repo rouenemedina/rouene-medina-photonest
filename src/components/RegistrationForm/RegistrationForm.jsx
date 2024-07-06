@@ -112,3 +112,5 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
 }
 
 export default RegistrationForm;
+
+//TODO: think about what to do with the buttons

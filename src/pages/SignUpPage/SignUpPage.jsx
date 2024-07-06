@@ -24,23 +24,6 @@ function SignUpPage() {
     setFormData({ ...formData, [name]: value });
   };
 
-  //validate formData
-  const validateFormData = (data) => {
-    const errors = {};
-    if (!data.user_first_name)
-      errors.user_first_name = "Please enter your first name.";
-    if (!data.user_last_name)
-      errors.user_last_name = "Please enter your last name.";
-    if (!data.user_email)
-      errors.user_email = "Please enter your email address.";
-    if (!data.user_password) errors.user_password = "Please enter a password.";
-    if (!data.user_type)
-      errors.user_type = "Please specify what you want to be.";
-
-    setFormErrors(errors);
-    return errors;
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -69,6 +52,23 @@ function SignUpPage() {
     } else {
       //TODO: error handling
     }
+  };
+
+  //validate formData
+  const validateFormData = (data) => {
+    const errors = {};
+    if (!data.user_first_name)
+      errors.user_first_name = "Please enter your first name.";
+    if (!data.user_last_name)
+      errors.user_last_name = "Please enter your last name.";
+    if (!data.user_email)
+      errors.user_email = "Please enter your email address.";
+    if (!data.user_password) errors.user_password = "Please enter a password.";
+    if (!data.user_type)
+      errors.user_type = "Please specify what you want to be.";
+
+    setFormErrors(errors);
+    return errors;
   };
 
   const handleReset = () => {

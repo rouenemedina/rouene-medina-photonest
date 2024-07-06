@@ -3,7 +3,13 @@ import Buttons from "../Buttons/Buttons";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function RegistrationForm({ fields = [], formData, handleChange, handleSubmit }) {
+function RegistrationForm({
+  formData,
+  handleChange,
+  handleSubmit,
+  fields = [],
+  errors,
+}) {
   const displayFirstName = fields.includes("firstName");
   const displayLastName = fields.includes("lastName");
   const displayEmail = fields.includes("email");
@@ -13,8 +19,8 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-      <article className="form__container">
-        { displayFirstName && (
+        <article className="form__container">
+          {displayFirstName && (
             <div className="form__subcontainer">
               <label htmlFor="user_first_name" className="form__label">
                 First Name:
@@ -28,9 +34,14 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
                 onChange={handleChange}
                 required
               ></input>
+              {errors.user_first_name && (
+                <span id="firstNameError" class="form__name-error">
+                  {errors.user_first_name}
+                </span>
+              )}
             </div>
-        )}
-        { displayLastName && (
+          )}
+          {displayLastName && (
             <div className="form__subcontainer">
               <label htmlFor="user_last_name" className="form__label">
                 Last Name:
@@ -44,11 +55,16 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
                 onChange={handleChange}
                 required
               ></input>
+              {errors.user_last_name && (
+                <span id="lastNameError" class="form__name-error">
+                  {errors.user_last_name}
+                </span>
+              )}
             </div>
-        )}
+          )}
         </article>
 
-        { displayEmail && (
+        {displayEmail && (
           <article className="form__card">
             <label htmlFor="user_email" className="form__label">
               Email:
@@ -62,10 +78,15 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
               onChange={handleChange}
               required
             ></input>
+             {errors.user_email && (
+                <span id="emailError" class="form__email-error">
+                  {errors.user_email}
+                </span>
+              )}
           </article>
         )}
 
-        { displayPassword && (
+        {displayPassword && (
           <article className="form__card">
             <label htmlFor="user_password" className="form__label">
               Password:
@@ -78,10 +99,15 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
               value={formData.user_password}
               onChange={handleChange}
             ></input>
+            {errors.user_password && (
+                <span id="passwordError" class="form__password-error">
+                  {errors.user_password}
+                </span>
+              )}
           </article>
         )}
 
-        { displayUserType && (
+        {displayUserType && (
           <article className="form__card">
             <label htmlFor="" className="form__label">
               Password:
@@ -97,6 +123,11 @@ function RegistrationForm({ fields = [], formData, handleChange, handleSubmit })
               <option value="photographer">Photographer</option>
               <option value="client">Client</option>
             </select>
+            {errors.user_type && (
+                <span id="typeError" class="form__type-error">
+                  {errors.user_type}
+                </span>
+              )}
           </article>
         )}
 

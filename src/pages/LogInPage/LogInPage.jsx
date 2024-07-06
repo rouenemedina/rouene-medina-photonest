@@ -31,7 +31,7 @@ function LogInPage() {
 
       sessionStorage.setItem("token", response.data.token);
       setError(null);
-      navigate("/");
+      navigate("");
     } catch (err) {
       setError(error.response.data);
     }

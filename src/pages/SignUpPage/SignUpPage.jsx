@@ -23,7 +23,7 @@ function SignUpPage() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-  
+
   //validate formData
   const validateFormData = (data) => {
     const errors = {};
@@ -33,8 +33,7 @@ function SignUpPage() {
       errors.user_last_name = "Please enter your last name.";
     if (!data.user_email)
       errors.user_email = "Please enter your email address.";
-    if (!data.user_password) 
-      errors.user_password = "Please enter a password.";
+    if (!data.user_password) errors.user_password = "Please enter a password.";
     if (!data.user_type)
       errors.user_type = "Please specify what you want to be.";
 
@@ -68,7 +67,7 @@ function SignUpPage() {
         setError(error.response.data);
       }
     } else {
-        //TODO: error handling
+      //TODO: error handling
     }
   };
 
@@ -104,6 +103,7 @@ function SignUpPage() {
         </article>
         <article className="registration__form">
           <RegistrationForm
+            fields={["firstName", "lastName", "email", "password", "userType"]}
             formData={formData}
             handleChange={handleChange}
             handleSubmit={handleSubmit}

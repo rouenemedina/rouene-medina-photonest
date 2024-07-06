@@ -1,0 +1,24 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+
+.header {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid $secondary-slategray;
+    justify-content: space-between;
+    align-items: center;
+
+
+    &__logo {
+        width: 2.75rem;
+        height: 1.375rem;
+    }
+
+    &__hamburger {
+        width: 2.625rem;
+        color: $background-eerieblack;
+    }
+}

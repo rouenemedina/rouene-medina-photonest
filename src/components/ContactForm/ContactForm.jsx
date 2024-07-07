@@ -8,8 +8,7 @@ function ContactForm({
   fields = [],
   errors,
 }) {
-  const displayFirstName = fields.includes("firstName");
-  const displayLastName = fields.includes("lastName");
+  const displayName = fields.includes("name");
   const displayEmail = fields.includes("email");
   const displayMessage = fields.includes("message");
 
@@ -17,51 +16,26 @@ function ContactForm({
     <main>
       <form className="contactForm">
         <article className="contactForm__container">
-          {displayFirstName && (
+          {displayName && (
             <div className="contactForm__subcontainer">
               <label
-                htmlFor="contact_first_name"
+                htmlFor="contact_name"
                 className="contactForm__label"
               >
-                First Name:
+                Name:
               </label>
               <input
                 type="text"
-                name="contact_first_name"
+                name="contact_name"
                 className="contactForm__input"
-                placeholder="First Name"
-                value={contactFormData.contact_first_name}
+                placeholder="First and Last Name"
+                value={contactFormData.contact_name}
                 onChange={handleChange}
                 required
               ></input>
-              {errors.contact_first_name && (
+              {errors.contact_name && (
                 <span class="form__error">
-                  {errors.contact_first_name}
-                </span>
-              )}
-            </div>
-          )}
-
-          {displayLastName && (
-            <div className="contactForm__subcontainer">
-              <label
-                htmlFor="contact_last_name"
-                className="contactForm__label"
-              >
-                Last Name:
-              </label>
-              <input
-                type="text"
-                name="contact_last_name"
-                className="contactForm__input"
-                placeholder="Last Name"
-                value={contactFormData.contact_last_name}
-                onChange={handleChange}
-                required
-              ></input>
-              {errors.contact_last_name && (
-                <span class="form__error">
-                  {errors.contact_last_name}
+                  {errors.contact_name}
                 </span>
               )}
             </div>
@@ -98,11 +72,11 @@ function ContactForm({
                 htmlFor="contact_message"
                 className="contactForm__label"
               >
-                Email:
+                Message:
               </label>
               <textarea
                 name="contact_message"
-                className="contactForm__input"
+                className="contactForm__text"
                 placeholder="Write your message here."
                 value={contactFormData.contact_message}
                 onChange={handleChange}

@@ -7,8 +7,7 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 
 function ContactPage() {
   const [contactFormData, setContactFormData] = useState({
-    contact_first_name: "",
-    contact_last_name: "",
+    contact_name: "",
     contact_email: "",
     contact_message: "",
   });
@@ -37,11 +36,9 @@ function ContactPage() {
 
   const handleReset = () => {
     setContactFormData({
-      user_first_name: "",
-      user_last_name: "",
-      user_email: "",
-      user_password: "",
-      user_type: "photographer",
+      contact_name: "",
+      contact_email: "",
+      contact_message: "",
     });
     setFormErrors({});
     setRedirect(true);
@@ -55,7 +52,7 @@ function ContactPage() {
           contactFormData={contactFormData}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          fields={["firstName", "lastName", "email", "message"]}
+          fields={["name", "email", "message"]}
           errors={formErrors}
         />
       </main>

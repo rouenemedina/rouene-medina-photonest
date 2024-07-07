@@ -1,0 +1,38 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.photographer {
+    background-color: $secondary-alabaster;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__subcontainer {
+        display: flex;
+    }
+
+    &__photo {
+        width: 15rem;
+        height: 100%;
+    }
+    
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    &__description {
+        color: $primary-CharcoalBlue;
+    }
+
+    &__work {
+        width: 100%;
+    }
+}

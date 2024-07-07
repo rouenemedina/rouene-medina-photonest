@@ -21,7 +21,8 @@ function PhotographersSection() {
           </div>
         </article>
       </section>
-      <section></section>
+      <section>
+      </section>
       <section></section>
     </main>
   );

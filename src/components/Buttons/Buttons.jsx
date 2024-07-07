@@ -7,6 +7,7 @@ function Buttons({
   showSubmit,
   showSignUp,
   showLogIn,
+  showContact
 }) {
   return (
     <div>
@@ -18,6 +19,11 @@ function Buttons({
       {showSecondary && (
         <button type="submit" className="button__secondary">
           Cancel
+        </button>
+      )}
+      {showContact && (
+        <button type="submit" className="button__primary" >
+          Let's Talk!
         </button>
       )}
       {showSubmit && (

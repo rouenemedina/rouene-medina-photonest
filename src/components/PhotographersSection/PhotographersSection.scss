@@ -14,10 +14,12 @@
 
     &__subcontainer {
         display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     &__photo {
-        width: 15rem;
+        width: 100%;
         height: 100%;
     }
     

@@ -109,7 +109,7 @@ function RegistrationForm({
 
         {displayUserType && (
           <article className="form__card">
-            <label htmlFor="" className="form__label">
+            <label htmlFor="user_type" className="form__label">
               Password:
             </label>
             <select

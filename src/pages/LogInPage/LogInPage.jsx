@@ -35,11 +35,13 @@ function LogInPage() {
 
       sessionStorage.setItem("token", response.data.token);
       setError(null);
-      navigate("");
+      navigate("/home");
     } catch (err) {
-      setError(error.response.data);
+      setError(err.response.data);
+      // TODO: handle error message
+      console.log(error);
     }
-  };
+  }
 
   return (
     <main>
@@ -50,6 +52,7 @@ function LogInPage() {
         handleSubmit={handleSubmit}
         fields={["email", "password"]}
         errors={formErrors}
+        formType="login"
       />
     </main>
   );

@@ -1,4 +1,5 @@
 import "./ContactPage.scss";
+import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -27,13 +28,32 @@ function ContactPage() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setContactFormData({ ...formData, [name]: value });
+    setContactFormData({ ...contactFormData, [name]: value });
   };
 
   const handleSubmit = async (event) => {
+    console.log("entered submit");
     event.preventDefault();
 
-    //TODO: axios call
+    //TODO: data validation
+
+    const updatedContactFormData = {
+      contact_name: contactFormData.contact_name,
+      contact_email: contactFormData.contact_email,
+      contact_message: contactFormData.contact_message,
+    };
+
+    try {
+      const API_URL = import.meta.env.VITE_APP_API_URL;
+        await axios.post(`${API_URL}/contact`, updatedContactFormData);
+        setSuccess(true);
+        setError(null);
+        handleReset();
+    } catch (err) {
+      console.log(err);
+      setSuccess(false);
+      setError(error.response.data);
+    } 
   };
 
   const handleReset = () => {

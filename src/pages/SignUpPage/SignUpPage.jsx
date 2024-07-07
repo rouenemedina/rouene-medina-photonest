@@ -112,6 +112,7 @@ function SignUpPage() {
             handleSubmit={handleSubmit}
             fields={["firstName", "lastName", "email", "password", "userType"]}
             errors={formErrors}
+            formType="signup"
           />
         </article>
         {success && <div className="registration__message">Signed up!</div>}

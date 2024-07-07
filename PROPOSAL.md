@@ -38,6 +38,7 @@ Photographers need a user-friendly and visually appealing platform to showcase t
 * Portfolio Viewing: Visitors can browse portfolios by category, style, or photographer.
 * Contact Form: Potential clients can contact a photographer directly through a form.
 * Responsive Design: The website will be fully responsive to ensure a good user experience on all devices.
+* Login/Register: Pages for user authentication.
 
 ## Implementation
 
@@ -141,7 +142,8 @@ Week 2: Frontend Development and Integration
 <!-- Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing. -->
 
 Features:
-* Login/Register: Pages for user authentication.
+* Guest Login Page, this is where users don't have an account
+
 * Search Functionality: Visitors can search for a photographer by name, location, or specialty.
 * Advanced Search Filters: Allow visitors to filter a photographer by various criteria such as price range, location, and style.
 * Booking System: Enable clients to book sessions with a photographer directly through the website.

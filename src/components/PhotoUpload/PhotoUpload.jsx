@@ -24,13 +24,13 @@ function PhotoUpload() {
   return (
     <>
       <main>
-        {image && (
+        {uploadImage && (
           <section>
-            <img src={image} alt="uploaded photo"></img>
+            <img src={uploadImage} alt="uploaded photo"></img>
             <Buttons
               showSecondary
               onClick={() => {
-                setImage(null);
+                setUploadImage(null);
               }}
             />
           </section>

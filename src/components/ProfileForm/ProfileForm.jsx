@@ -10,16 +10,24 @@ function ProfileForm() {
     profile_feature: [],
   });
 
+  //this is for the entire form
   const handleChange = (event) => {
     const { name, value } = event.target;
     setProfile({ ...profile, [name]: value });
   };
 
+  //this one is for uploading image
+  const handleUploadPhoto = (photoUrl) => {
+    setProfile({ ...profile, profile_photo: [...profile.profile_photo, photoUrl] });
+  };
+
+  //TODO: axios call setup
   const handleSave = () => {};
 
   return (
     <main>
       <form>
+        <PhotoUpload onUpload={handleUploadPhoto}/>
         <article className="">
           <label htmlFor="profile_name" className="">
             NAME:
@@ -58,10 +66,10 @@ function ProfileForm() {
             </span>
           )} */}
         </article>
-        <PhotoUpload />
+        <PhotoUpload onUpload={handleUploadPhoto}/>
       </form>
     </main>
   );
 }
-
+//TODO: error handling in the forms
 export default ProfileForm;

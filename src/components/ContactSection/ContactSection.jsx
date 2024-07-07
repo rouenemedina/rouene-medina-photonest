@@ -14,3 +14,4 @@ function ContactSection() {
 }
 
 export default ContactSection;
+//TODO: link button to contact page

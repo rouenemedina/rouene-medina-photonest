@@ -65,3 +65,4 @@ function PortfolioPage() {
 }
 
 export default PortfolioPage;
+//TODO: refactor to dynamic state

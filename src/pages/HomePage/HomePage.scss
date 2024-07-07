@@ -1,0 +1,12 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.homepage {
+    &__header {
+        background-image: url(../../assets/images/chris-czermak-7ybKmhDTcz0-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

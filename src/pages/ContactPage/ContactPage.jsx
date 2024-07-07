@@ -48,6 +48,12 @@ function ContactPage() {
         await axios.post(`${API_URL}/contact`, updatedContactFormData);
         setSuccess(true);
         setError(null);
+        
+        //TODO:
+        // create function to display successful message submission
+        // add timeout before redirect
+
+
         handleReset();
     } catch (err) {
       console.log(err);

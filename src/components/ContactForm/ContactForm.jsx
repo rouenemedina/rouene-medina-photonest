@@ -1,3 +1,4 @@
+import Buttons from "../Buttons/Buttons";
 import "./ContactForm.scss";
 import React from "react";
 
@@ -14,14 +15,11 @@ function ContactForm({
 
   return (
     <main>
-      <form className="contactForm">
+      <form className="contactForm" onSubmit={handleSubmit}>
         <article className="contactForm__container">
           {displayName && (
             <div className="contactForm__subcontainer">
-              <label
-                htmlFor="contact_name"
-                className="contactForm__label"
-              >
+              <label htmlFor="contact_name" className="contactForm__label">
                 Name:
               </label>
               <input
@@ -34,19 +32,14 @@ function ContactForm({
                 required
               ></input>
               {errors.contact_name && (
-                <span class="form__error">
-                  {errors.contact_name}
-                </span>
+                <span class="form__error">{errors.contact_name}</span>
               )}
             </div>
           )}
 
           {displayEmail && (
             <div className="contactForm__subcontainer">
-              <label
-                htmlFor="contact_email"
-                className="contactForm__label"
-              >
+              <label htmlFor="contact_email" className="contactForm__label">
                 Email:
               </label>
               <input
@@ -59,19 +52,14 @@ function ContactForm({
                 required
               ></input>
               {errors.contact_email && (
-                <span class="form__error">
-                  {errors.contact_email}
-                </span>
+                <span class="form__error">{errors.contact_email}</span>
               )}
             </div>
           )}
 
           {displayMessage && (
             <div className="contactForm__subcontainer">
-              <label
-                htmlFor="contact_message"
-                className="contactForm__label"
-              >
+              <label htmlFor="contact_message" className="contactForm__label">
                 Message:
               </label>
               <textarea
@@ -83,12 +71,14 @@ function ContactForm({
                 required
               ></textarea>
               {errors.contact_message && (
-                <span class="form__error">
-                  {errors.contact_message}
-                </span>
+                <span class="form__error">{errors.contact_message}</span>
               )}
             </div>
           )}
+          <div className="contactForm__btn">
+            <Buttons showSecondary />
+            <Buttons showSubmit />
+          </div>
         </article>
       </form>
     </main>

@@ -18,6 +18,10 @@
   &__hamburger {
     width: 2.625rem;
     color: $background-eerieblack;
+
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
   }
 
   &__img {

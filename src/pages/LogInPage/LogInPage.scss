@@ -1,0 +1,42 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.login {
+  height: 100vh;
+  background-image: url(../../assets/images/katerina-kerdi--YiJvbfNDqk-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+
+  &__container {
+    background-color: rgba(35, 42, 55, 0.7);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    position: relative;
+    top: 4rem;
+
+    @include tablet {
+      width: 38%;
+      padding: 2rem 3rem 2rem 3rem;
+      position: relative;
+      top: 2rem;
+      left: 3rem;
+    }
+
+    @include desktop {
+      width: 30%;
+      padding: 4rem 3rem 4rem 3rem;
+      top: 12rem;
+      left: 7rem;
+    }
+  }
+
+  &__header {
+    color: $primary-Timberwolf;
+  }
+}

@@ -92,8 +92,8 @@ function SignUpPage() {
   };
 
   return (
-    <main>
-      <section className="registration">
+    <main className="registration">
+      <section className="registration__wrapper">
         <article className="registration__container">
           <div className="registration__subcontainer">
             <h1 className="registration__title">CREATE NEW ACCOUNT</h1>

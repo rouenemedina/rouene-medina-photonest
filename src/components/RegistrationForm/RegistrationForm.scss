@@ -16,17 +16,18 @@
   &__container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
   }
 
   &__subcontainer {
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 0.1rem;
   }
 
   &__label {
-    color: $secondary-slategray;
+    color: $primary-Timberwolf;
     font-size: 0.625rem;
     font-weight: 400;
     line-height: 1.25rem;

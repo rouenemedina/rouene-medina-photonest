@@ -3,18 +3,59 @@
 @use "../../styles/partials/variables" as *;
 
 .registration {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
+  height: 100vh;
+  background-image: url(../../assets/images/DSC03250-af.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__wrapper {
+    background-color: rgba(35, 42, 55, 0.7);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+
+    @include tablet {
+      width: 50%;
+      padding: 4rem 3rem 4rem 3rem;
+      position: relative;
+      top: 6rem;
+      left: 3rem;
+    }
+
+    @include desktop {
+      width: 40%;
+      padding: 4rem 3rem 4rem 3rem;
+      position: relative;
+      top: 14rem;
+      left: 7rem;
+    }
+  }
 
   &__container {
+    display: flex;
     padding: 0.5rem;
+  }
+
+  &__title, 
+  &__subtitle {
+    color: $primary-Timberwolf;
+  }
+
+  &__link {
+    color: $primary-Peachcrayon;
   }
 
   &__card {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
   }
 }

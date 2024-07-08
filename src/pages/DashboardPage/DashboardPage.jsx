@@ -2,6 +2,7 @@ import "./DashboardPage.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/Header/Header";
+import Buttons from "../../components/Buttons/Buttons";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -17,20 +18,20 @@ function DashboardPage() {
     const token = sessionStorage.getItem("token");
 
     if (!token) {
-        return setFailedAuth(true);
+      return setFailedAuth(true);
     }
     //get token
     try {
-        const response = await axios.get(`${API_URL}/auth/profile`, {
-            headers: {
-                Authorization: "Bearer" + token,
-            },
-        });
-        console.log(response.data);
-        setUser(response.data);
-    } catch(err) {
-        console.log(err);
-        setFailedAuth(true);
+      const response = await axios.get(`${API_URL}/auth/profile`, {
+        headers: {
+          Authorization: "Bearer" + token,
+        },
+      });
+      console.log(response.data);
+      setUser(response.data);
+    } catch (err) {
+      console.log(err);
+      setFailedAuth(true);
     }
     setIsLoading(false);
   };
@@ -39,26 +40,47 @@ function DashboardPage() {
     login();
   }, []);
 
-  if(failedAuth) {
+  const logout = () => {
+    sessionStorage.removeItem("token");
+    setUser(null);
+    setFailedAuth(true);
+  }
+
+  //TODO: design the pages below
+  if (failedAuth) {
     return (
-        <main>
-            <section>
-                
-            </section>
-        </main>
-    )
+      <main>
+        <section></section>
+      </main>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <main>
+        <section></section>
+      </main>
+    );
   }
 
   //return the profile of the user (general: for photographers and clients);
   return (
-    <main>
+    <>
       <Header />
-      <h2>DASHBOARD</h2>
-      <section>
-      <h1>Hi, </h1>
-      <h3>What are we doing today? </h3>
-      </section>
-    </main>
+      <main>
+        <h2>DASHBOARD</h2>
+        <section>
+          <article>
+            <h1>Hi, </h1>
+            <h3>What are we doing today? </h3>
+          </article>
+          <article>
+
+          </article>
+        </section>
+        <Buttons showLogOut onClick={logout}/>
+      </main>
+    </>
   );
 }
 

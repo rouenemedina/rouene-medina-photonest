@@ -7,6 +7,7 @@ function Buttons({
   showSubmit,
   showSignUp,
   showLogIn,
+  showLogOut,
   showContact
 }) {
   return (
@@ -39,6 +40,11 @@ function Buttons({
       {showLogIn && (
         <button type="submit" className="button__login">
           Log In
+        </button>
+      )}
+      {showLogOut && (
+        <button type="submit" className="button__secondary">
+          Log Out
         </button>
       )}
     </div>

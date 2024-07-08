@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/Header/Header";
 import Buttons from "../../components/Buttons/Buttons";
+import { Link } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -44,13 +45,19 @@ function DashboardPage() {
     sessionStorage.removeItem("token");
     setUser(null);
     setFailedAuth(true);
-  }
+  };
 
   //TODO: design the pages below
   if (failedAuth) {
     return (
       <main>
-        <section></section>
+        <section>
+          <h1>Log In to PhotoNest</h1>
+          <h2>Not yet a member?</h2>
+          <Link to="/">
+            <p>Sign Up</p>
+          </Link>
+        </section>
       </main>
     );
   }
@@ -74,11 +81,9 @@ function DashboardPage() {
             <h1>Hi, </h1>
             <h3>What are we doing today? </h3>
           </article>
-          <article>
-
-          </article>
+          <article></article>
         </section>
-        <Buttons showLogOut onClick={logout}/>
+        <Buttons showLogOut onClick={logout} />
       </main>
     </>
   );

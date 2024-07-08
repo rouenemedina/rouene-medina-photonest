@@ -32,13 +32,12 @@ Photographers need a user-friendly and visually appealing platform to showcase t
 <!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
 
 <!-- Put yourself as the user of your app and then what problems would you like to be solved. Describe it as much as possible-->
-
+* Login/Register: Pages for user authentication.
 * Photographer Profile: Photographer can create and manage personal profile.
 * Portfolio Creation: Photographer can upload and organize their photos into portfolios.
 * Portfolio Viewing: Visitors can browse portfolios by category, style, or photographer.
 * Contact Form: Potential clients can contact a photographer directly through a form.
 * Responsive Design: The website will be fully responsive to ensure a good user experience on all devices.
-* Login/Register: Pages for user authentication.
 
 ## Implementation
 
@@ -67,6 +66,7 @@ Server libraries
 express
 
 External Libraries (Store and serve user-generated content like images)
+Microsoft Azure
 Cloudinary
 Firebase Storage
 
@@ -75,6 +75,7 @@ Cloudinary and Firebase Storage: Limitations in terms of storage space, API call
 
 ### APIs
 
+Microsoft Onedrive API
 Cloudinary/Firebase Storage API: For image upload and management
 
 ### Sitemap
@@ -107,6 +108,9 @@ PORTFOLIO SECTION
 
 ### Endpoints
 <!-- In the final readMe can include the endpoint, short description, parameters, and response body -->
+* POST /api/auth/register: User registration.
+* POST /api/auth/login: User login.
+
 * POST /api/portfolios: Create a new portfolio.
 * GET /api/portfolios: Retrieve portfolios.
 * GET /api/portfolios/: Retrieve a specific portfolio.
@@ -117,17 +121,20 @@ PORTFOLIO SECTION
 * POST /api/contact: Send a message to a photographer.
 
 ### Auth
-
+* POST /api/auth/register: User registration.
+* POST /api/auth/login: User login.
+* GET /api/auth/logout: User logout.
 
 ## Roadmap
 <!-- Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. 
 This could be in Jira -->
 
 Week 1: Planning and Backend Development
-* Set up database schema and APIs for portfolio creation, and image management.
-* Implement backend logic for handling image uploads using Cloudinary.
+* Set up database schema and APIs for user registration, portfolio creation, and image management.
+* Implement backend logic for handling image uploads using Microsoft Azure and Onedrive API.
 * Begin frontend development for photgrapher profile and portfolio creation.
-* Begin frontend development for contact form
+* Begin frontend development for contact form.
+* Implement user authentication and profile management.
 
 Week 2: Frontend Development and Integration
 
@@ -160,17 +167,5 @@ Data
 * Comments and Likes: Stores user interactions with portfolios.
 
 Endpoints: 
-* POST /api/auth/register: User registration.
-* POST /api/auth/login: User login.
-
 * POST /api/comments: Add a comment to a portfolio.
 * POST /api/likes: Like a portfolio or image.
-
-AUTH
-* POST /api/auth/register: User registration.
-* POST /api/auth/login: User login.
-* GET /api/auth/logout: User logout.
-
-Roadmap:
-* Set up database schema and APIs for user registration
-* Implement user authentication and profile management.

@@ -35,7 +35,7 @@ function LogInPage() {
 
       sessionStorage.setItem("token", response.data.token);
       setError(null);
-      navigate("/home");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response.data);
       // TODO: handle error message

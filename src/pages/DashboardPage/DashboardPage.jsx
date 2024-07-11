@@ -70,6 +70,10 @@ function DashboardPage() {
     navigate("/login");
   };
 
+  const resetPassword = () => {
+    //logic to reset password
+  };
+
   if (isLoading) {
     return (
       <main>
@@ -79,19 +83,37 @@ function DashboardPage() {
       </main>
     );
   }
-
+  console.log(user);
   //return the profile of the user (general: for photographers and clients);
   return (
     <>
       <Header />
-      <main>
-        <h2>DASHBOARD</h2>
-        <section>
-          <article>
-            <h1>Hi, {user ? user.name : "Guest"}</h1>
-            <h3>What are we doing today? </h3>
+      <main className="dashboard">
+        <h2 className="dashboard__title">DASHBOARD</h2>
+        <section className="dashboard__container">
+          <article className="dashboard__subcontainer">
+            <h1 className="dashboard__user">
+              Hi, {user ? user.user_first_name : "Guest"}
+            </h1>
+            <h3 className="dashboard__description">
+              What are we doing today?{" "}
+            </h3>
           </article>
-          <article></article>
+          <article className="dashboard__card">
+            <p>First Name: {user.user_first_name}</p>
+            <p>Last Name: {user.user_last_name}</p>
+            <p>Email: {user.user_email}</p>
+            <p>
+              Forgot Password? 
+              <button 
+                type="button" 
+                onClick={resetPassword} 
+                className="dashboard__reset"
+              >
+                RESET PASSWORD
+              </button>
+            </p>
+          </article>
         </section>
         <form className="dashboard__form" onSubmit={handleSubmit}>
           <Buttons showLogOut onClick={logout} />

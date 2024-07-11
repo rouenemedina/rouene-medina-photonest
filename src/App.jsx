@@ -7,6 +7,7 @@ import PhotographerPage from './pages/PhotographerPage/PhotographerPage';
 import PortfolioPage from './pages/PortfolioPage/PortfolioPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import EditPortfolioPage from './pages/EditPortfolioPage/EditPortfolioPage';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/profile" element={<PhotographerPage />}></Route>
         {/* <Route path="/profile/:id" element={<PortfolioPage />}></Route> */}
         <Route path="/portfolio" element={<PortfolioPage />}></Route>
+        <Route path="/editportfolio" element={<EditPortfolioPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
       </Routes>
      </BrowserRouter>

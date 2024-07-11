@@ -30,7 +30,7 @@ function RegistrationForm({
                 <input
                   type="text"
                   name="user_first_name"
-                  className="form__input"
+                  className={`form__input ${errors.user_first_name ? 'form__input--error' : ''}`}
                   placeholder="First Name"
                   value={formData.user_first_name}
                   onChange={handleChange}
@@ -51,7 +51,7 @@ function RegistrationForm({
                 <input
                   type="text"
                   name="user_last_name"
-                  className="form__input"
+                  className={`form__input ${errors.user_last_name ? 'form__input--error' : ''}`}
                   placeholder="Last Name"
                   value={formData.user_last_name}
                   onChange={handleChange}
@@ -74,7 +74,7 @@ function RegistrationForm({
               <input
                 type="email"
                 name="user_email"
-                className="form__input"
+                className={`form__input ${errors.user_email ? 'form__input--error' : ''}`}
                 placeholder="Email"
                 value={formData.user_email}
                 onChange={handleChange}
@@ -96,7 +96,7 @@ function RegistrationForm({
               <input
                 type="password"
                 name="user_password"
-                className="form__input"
+                className={`form__input ${errors.user_password ? 'form__input--error' : ''}`}
                 placeholder="Password"
                 value={formData.user_password}
                 onChange={handleChange}
@@ -117,7 +117,7 @@ function RegistrationForm({
               <select
                 type="dropdown"
                 name="user_type"
-                className="form__input"
+                className={`form__input form__input--select ${errors.user_type ? 'form__input--error' : ''}`}
                 value={formData.user_type}
                 onChange={handleChange}
                 required
@@ -146,5 +146,3 @@ function RegistrationForm({
 }
 
 export default RegistrationForm;
-
-//TODO: think about what to do with the buttons

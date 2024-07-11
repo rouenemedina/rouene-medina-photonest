@@ -17,8 +17,12 @@ function PhotoUpload() {
         return;
     }
 
-    //TODO: axios call try/catch
+    //TODO: axios call try/catch.
+    try {
 
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   return (

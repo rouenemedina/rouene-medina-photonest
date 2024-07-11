@@ -65,7 +65,9 @@ function DashboardPage() {
   if (isLoading) {
     return (
       <main>
-        <section></section>
+        <section>
+            
+        </section>
       </main>
     );
   }

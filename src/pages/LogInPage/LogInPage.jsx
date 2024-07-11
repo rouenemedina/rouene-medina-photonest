@@ -44,19 +44,21 @@ function LogInPage() {
   };
 
   return (
-    <main className="login">
-      <section className="login__container">
-        <h1 className="login__header">Welcome!</h1>
-        <RegistrationForm
-          formData={formData}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          fields={["email", "password"]}
-          errors={formErrors}
-          formType="login"
-        />
-      </section>
-    </main>
+    <>
+      <main className="login">
+        <section className="login__container">
+          <h1 className="login__header">Welcome!</h1>
+          <RegistrationForm
+            formData={formData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            fields={["email", "password"]}
+            errors={formErrors}
+            formType="login"
+          />
+        </section>
+      </main>
+    </>
   );
 }
 

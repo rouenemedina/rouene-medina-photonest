@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import img1 from "../../assets/images/stefen-tan-FWPu4IWk-wM-unsplash.jpg";
 
 function ContactPage() {
   const [contactFormData, setContactFormData] = useState({
@@ -45,21 +46,20 @@ function ContactPage() {
 
     try {
       const API_URL = import.meta.env.VITE_APP_API_URL;
-        await axios.post(`${API_URL}/contact`, updatedContactFormData);
-        setSuccess(true);
-        setError(null);
-        
-        //TODO:
-        // create function to display successful message submission
-        // add timeout before redirect
+      await axios.post(`${API_URL}/contact`, updatedContactFormData);
+      setSuccess(true);
+      setError(null);
 
+      //TODO:
+      // create function to display successful message submission
+      // add timeout before redirect
 
-        handleReset();
+      handleReset();
     } catch (err) {
       console.log(err);
       setSuccess(false);
       setError(error.response.data);
-    } 
+    }
   };
 
   const handleReset = () => {
@@ -75,14 +75,24 @@ function ContactPage() {
   return (
     <>
       <Header />
-      <main>
-        <ContactForm
-          contactFormData={contactFormData}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          fields={["name", "email", "message"]}
-          errors={formErrors}
-        />
+      <main className="contact">
+        <section className="contact__section">
+          <article className="contact__container">
+            <div className="contact__card">
+              <h1 className="contact__title">Contact Us</h1>
+            </div>
+          </article>
+          <ContactForm
+            contactFormData={contactFormData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            fields={["name", "email", "message"]}
+            errors={formErrors}
+          />
+        </section>
+        <section className="contact__feature">
+          <img src={img1} alt="contact us" className="contact__img"></img>
+        </section>
       </main>
     </>
   );

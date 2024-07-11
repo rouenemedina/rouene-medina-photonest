@@ -50,12 +50,12 @@ function DashboardPage() {
   //TODO: design the pages below
   if (failedAuth) {
     return (
-      <main>
-        <section>
-          <h1>Log In to PhotoNest</h1>
-          <h2>Not yet a member?</h2>
+      <main className="failedAuth">
+        <section className="failedAuth__container">
+          <h1 className="failedAuth__title">Log In to PhotoNest</h1>
+          <h2 className="failedAuth__description">Not yet a member?</h2>
           <Link to="/">
-            <p>Sign Up</p>
+            <p className="failedAuth__redirect">Sign Up</p>
           </Link>
         </section>
       </main>

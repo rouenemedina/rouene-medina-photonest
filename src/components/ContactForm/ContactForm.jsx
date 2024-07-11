@@ -14,7 +14,7 @@ function ContactForm({
   const displayMessage = fields.includes("message");
 
   return (
-    <main>
+    <main className="contactForm__wrapper">
       <form className="contactForm" onSubmit={handleSubmit}>
         <article className="contactForm__container">
           {displayName && (
@@ -64,7 +64,7 @@ function ContactForm({
               </label>
               <textarea
                 name="contact_message"
-                className="contactForm__text"
+                className="contactForm__input contactForm__input--text"
                 placeholder="Write your message here."
                 value={contactFormData.contact_message}
                 onChange={handleChange}
@@ -75,11 +75,11 @@ function ContactForm({
               )}
             </div>
           )}
-          <div className="contactForm__btn">
+        </article>
+        <div className="contactForm__btn">
             <Buttons showSecondary />
             <Buttons showSubmit />
           </div>
-        </article>
       </form>
     </main>
   );

@@ -45,12 +45,14 @@
     }
 
     @include tablet {
-      max-width: 10.5rem;
+      width: 9rem;
+      max-width: 10rem;
       height: 2.375rem;
     }
 
     @include desktop {
-      max-width: 10.5rem;
+      width: 7.8125rem;
+      max-width: 8rem;
       height: 2.375rem;
     }
   }
@@ -58,6 +60,32 @@
   &__submit {
     width: 100%;
     // min-width: 4.4375rem;
+    height: 2.25rem;
+    color: $primary-Timberwolf;
+    background-color: $secondary-deer;
+    padding: 0.5rem 2.5rem;
+    border: 1px solid $secondary-deer;
+    border-radius: 20px;
+
+    &:hover {
+        @include hover-style;
+    }
+
+    @include tablet {
+      width: 9rem;
+      max-width: 10rem;
+      height: 2.375rem;
+    }
+
+    @include desktop {
+      width: 7.8125rem;
+      max-width: 8rem;
+      height: 2.375rem;
+    }
+  }
+
+  &__signup {
+    width: auto;
     height: 2.25rem;
     color: $primary-Timberwolf;
     background-color: $background-gunmetal;
@@ -80,38 +108,14 @@
     }
   }
 
-  &__signup {
-    width: auto;
-    height: 2.25rem;
-    color: $primary-Timberwolf;
-    background-color: $primary-CharcoalBlue;
-    padding: 0.5rem 2.5rem;
-    border: 1px solid $primary-CharcoalBlue;
-    border-radius: 20px;
-
-    &:hover {
-        @include hover-style;
-    }
-
-    @include tablet {
-      max-width: 10.5rem;
-      height: 2.375rem;
-    }
-
-    @include desktop {
-      max-width: 10.5rem;
-      height: 2.375rem;
-    }
-  }
-
   &__login {
     width: auto;
     min-width: 4.4375rem;
     height: 2.25rem;
     color: $primary-Peachcrayon;
-    background-color: $secondary-slategray;
+    background-color: $background-gunmetal;
     padding: 0.5rem 2.5rem;
-    border: 1px solid $secondary-slategray;
+    border: 1px solid $background-gunmetal;
     border-radius: 20px;
 
     &:hover {

@@ -2,3 +2,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+
+.failedAuth {
+    background: url(../../assets/images/);
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+}

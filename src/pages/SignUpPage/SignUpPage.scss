@@ -6,7 +6,7 @@
 .registration {
   width: 100%;
   height: 100vh;
-  background-image: url(../../assets/images/DSC03250-af.jpg);
+  background-image: url(../../assets/images/pawel-czerwinski-BFxnx0UHVGM-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -22,8 +22,8 @@
   }
 
   &__wrapper {
-    width: 80%;
-    background: rgba(255, 255, 255, 0.3);
+    width: 60%;
+    background: rgba(0, 0, 0, 0.6);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -31,8 +31,8 @@
     gap: 1rem;
     padding: 1.25rem 1.875rem;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
 
     @include tablet {
@@ -69,7 +69,13 @@
 
     @include tablet {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: center;
       gap: 0.5rem;
     }
   }

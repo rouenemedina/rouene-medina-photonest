@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import axios from "axios";
 
 //POST endpoint from my server
-//image_title, image_description, category_id, user_id, image_tags, file
 //will return a url for the uploaded photo
 
 //setup the edit form

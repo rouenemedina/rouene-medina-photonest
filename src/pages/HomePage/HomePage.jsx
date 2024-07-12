@@ -11,9 +11,9 @@ function HomePage() {
         <Header />
         <Hero />
       </header>
-      <main>
+      {/* <main>
         <PhotographersSection />
-      </main>
+      </main> */}
     </>
   );
 }

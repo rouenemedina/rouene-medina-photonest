@@ -1,0 +1,18 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.portfolio {
+    &__work {
+        background-color: $secondary-alabaster;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+    
+        @include tablet {
+          padding: 1.5rem;
+        }
+      }
+}

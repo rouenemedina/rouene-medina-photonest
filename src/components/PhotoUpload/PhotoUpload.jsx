@@ -1,7 +1,7 @@
 import "./PhotoUpload.scss";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-import Buttons from "../Buttons/Buttons";
 
 //POST endpoint from my server
 //image_title, image_description, category_id, user_id, image_tags, file
@@ -16,15 +16,25 @@ import Buttons from "../Buttons/Buttons";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function PhotoUpload() {
+function PhotoUpload({ onFileChange }) {
   const [uploadImageURL, setUploadImageURL] = useState(null);
   const [imageFile, setImageFile] = useState(null);
+
+  useEffect(() => {
+    return () => {
+      // Cleanup
+      if(uploadImageURL) {
+        URL.revokeObjectURL(uploadImageURL);
+      }
+    };
+  }, [uploadImageURL]);
 
   const handleChange = (event) => {
     const file = event.target.files[0];
     setImageFile(file);
     const imageURL = URL.createObjectURL(file);
     setUploadImageURL(imageURL);
+    onFileChange(file);
   };
 
   //assumption: only 1 file is uploaded
@@ -37,9 +47,8 @@ function PhotoUpload() {
     const formData = new FormData();
     formData.append("file", imageFile);
 
-    //TODO: axios call try/catch.
     try {
-      const response = await axios.post(API_URL, formData, {
+      const response = await axios.post(`${API_URL}/hero/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       const { imageURL } = response.data.url;
@@ -54,7 +63,7 @@ function PhotoUpload() {
       <main>
         {uploadImageURL && (
           <section>
-            <img src={uploadImageURL} alt="uploaded image"></img>
+            <img src={uploadImageURL} alt="uploaded image" className="photoUpload__img"></img>
           </section>
         )}
         <input type="file" onChange={handleChange} />

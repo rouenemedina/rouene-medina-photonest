@@ -34,9 +34,8 @@ function LogInPage() {
       });
 
       sessionStorage.setItem("token", response.data.token);
-      //TODO
-      //sessionStorage.setItem("photonest_email", formData.user_email);
-
+      sessionStorage.setItem("photonest_user_id", response.data.user_id);
+  
       setError(null);
       navigate("/dashboard");
     } catch (err) {

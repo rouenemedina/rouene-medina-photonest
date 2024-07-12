@@ -1,9 +1,9 @@
+import "./PortfolioContactSection.scss";
+import React from "react";
 import { Link } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
-import "./ContactSection.scss";
-import React from "react";
 
-function ContactSection() {
+function PortfolioContactSection() {
   return (
     <>
       <main className="section__contact">
@@ -23,4 +23,4 @@ function ContactSection() {
   );
 }
 
-export default ContactSection;
+export default PortfolioContactSection;

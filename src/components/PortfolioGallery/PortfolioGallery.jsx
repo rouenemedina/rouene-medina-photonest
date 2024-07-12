@@ -1,4 +1,4 @@
-import "./Gallery.scss";
+import "./PortfolioGallery.scss";
 import React from "react";
 import img1 from "../../assets/images/elvis-bekmanis-WJc87MVcDaA-unsplash.jpg";
 import img2 from "../../assets/images/jonathan-borba-eg-72fI9wK4-unsplash.jpg";
@@ -9,7 +9,7 @@ import img6 from "../../assets/images/irina-iriser-Xu5h9W--N4k-unsplash.jpg";
 import img7 from "../../assets/images/katelyn-macmillan-ExjpauryqzA-unsplash.jpg";
 import img8 from "../../assets/images/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg";
 
-function Gallery() {
+function PortfolioGallery() {
   return (
     <main>
       <section className="gallery">
@@ -26,4 +26,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default PortfolioGallery;

@@ -11,10 +11,10 @@ import Buttons from "../Buttons/Buttons";
 //handle errors
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function EditHero({ userEmail }) {
+function EditHero({ userId }) {
   const [editHeroFormData, setEditHeroFormData] = useState({
     hero_description: "",
-    user_email: userEmail,
+    user_id: userId,
     file: "",
   });
   //this is for handling errors in the form
@@ -57,14 +57,12 @@ function EditHero({ userEmail }) {
     }
 
     const updatedEditHeroFormData = new FormData();
-    console.log(editHeroFormData.user_email);
-    console.log(editHeroFormData.hero_description);
     updatedEditHeroFormData.append(
       "hero_description",
       editHeroFormData.hero_description
     );
     updatedEditHeroFormData.append(
-      "user_email", editHeroFormData.user_email
+      "user_id", editHeroFormData.user_id
     );
     updatedEditHeroFormData.append(
       "file", uploadedFile
@@ -83,7 +81,7 @@ function EditHero({ userEmail }) {
     const handleReset = () => {
       setEditHeroFormData({
         hero_description: "",
-        user_email: userEmail,
+        user_id: userId,
         file: null,
       })
       setUploadedFile(null);

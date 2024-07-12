@@ -35,6 +35,17 @@ function PhotoUpload({ onFileChange }) {
     const imageURL = URL.createObjectURL(file);
     setUploadImageURL(imageURL);
     onFileChange(file);
+
+    const img = new Image();
+    img.src = imageURL;
+    img.onload = () => {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+      if (aspectRatio > 1) {
+        setImageOrientation("landscape");
+      } else {
+        setImageOrientation("portrait");
+      }
+    };
   };
 
   //assumption: only 1 file is uploaded
@@ -63,7 +74,7 @@ function PhotoUpload({ onFileChange }) {
       <main>
         {uploadImageURL && (
           <section>
-            <img src={uploadImageURL} alt="uploaded image" className="photoUpload__img"></img>
+            <img src={uploadImageURL} alt="uploaded image" className={`photoUpload__img photoUpload__img--${imageOrientation}`}></img>
           </section>
         )}
         <input type="file" onChange={handleChange} />

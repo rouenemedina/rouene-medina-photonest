@@ -77,11 +77,11 @@ function ContactPage() {
       <Header />
       <main className="contact">
         <section className="contact__section">
-          <article className="contact__container">
+          {/* <article className="contact__container">
             <div className="contact__card">
               <h1 className="contact__title">Contact Us</h1>
             </div>
-          </article>
+          </article> */}
           <ContactForm
             contactFormData={contactFormData}
             handleChange={handleChange}

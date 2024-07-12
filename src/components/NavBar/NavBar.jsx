@@ -18,6 +18,9 @@ function NavBar({ isClicked, closeMenu }) {
         <NavLink to="/portfolio" className="navBar__link" onClick={closeMenu}>
           <h4 className="navBar__title">PORTFOLIO</h4>
         </NavLink>
+        <NavLink to="/editportfolio" className="navBar__link" onClick={closeMenu}>
+          <h4 className="navBar__title">EDIT PORTFOLIO</h4>
+        </NavLink>
         <NavLink to="/contact" className="navBar__link" onClick={closeMenu}>
           <h4 className="navBar__title">CONTACT</h4>
         </NavLink>

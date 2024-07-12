@@ -4,15 +4,17 @@
 @use "../../styles/partials/typography" as *;
 
 .navBar {
-    background-color: $background-nobel;
+    width: 60%;
+    height: 15rem;
+    background: rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
+    border-top: 3px solid $primary-Peachcrayon;
     align-items: center;
     justify-content: space-evenly;
     position: absolute;
-    border-top: 3px solid $primary-Peachcrayon;
-    top: 13vh;
-    right: 0;
-    height: 25vh;
-    width: 100%;
+    top: 4.4rem;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
 }

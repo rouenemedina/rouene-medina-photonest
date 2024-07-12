@@ -7,13 +7,5 @@
     &__img {
         box-sizing: border-box;
         width: 100%;
-
-        &--landscape {
-            object-position: center;
-        }
-
-        &--portrait {
-            object-position: center 8rem;
-        }
     }
 }

@@ -17,4 +17,22 @@
     left: 0;
     z-index: 1;
     backdrop-filter: blur(5px);
+
+    &__link {
+        color: $primary-CharcoalBlue;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary-Peachcrayon;
+        }
+
+        &--active {
+            color: $primary-Timberwolf;
+            @include selected-state;
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
 }

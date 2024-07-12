@@ -2,6 +2,7 @@ import "./PhotographersSection.scss";
 import React from "react";
 import PhotoImg1 from "../../assets/images/christopher-campbell-Xo4YvBp6IBM-unsplash.jpg";
 import WorkImg1 from "../../assets/images/dmitry-schemelev-OEnKKXvdbDU-unsplash.jpg";
+import { Link } from "react-router-dom";
 
 function PhotographersSection() {
   return (
@@ -14,7 +15,9 @@ function PhotographersSection() {
               alt="Photographer's Profile Photo"
               className="photographer__photo"
             ></img>
-            <h1 className="photographer__name">MEET "Nick"</h1>
+            <Link to="/portfolio">
+              <h1 className="photographer__name">MEET "Nick"</h1>
+            </Link>
           </div>
           <div className="photographer__card">
             <p className="photographer__description">

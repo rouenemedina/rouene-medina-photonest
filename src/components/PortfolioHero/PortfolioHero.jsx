@@ -53,8 +53,6 @@ function PortfolioHero() {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  console.log(heroDetails);
-
   return (
     <main>
       <section className="portfolio__hero">

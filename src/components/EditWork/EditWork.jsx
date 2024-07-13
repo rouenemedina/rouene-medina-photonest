@@ -50,7 +50,6 @@ function EditWork({ userId }) {
 
   const handleReset = () => {
     setEditWorkFormData({
-      work_id: workId,
       work_title1: "",
       work_title2: "",
       work_title3: "",

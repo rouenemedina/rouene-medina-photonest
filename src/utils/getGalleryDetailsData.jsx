@@ -7,7 +7,7 @@ async function getGalleryDetailsData(userId) {
   try {
     const response = await axios.get(`${API_URL}/gallery/${userId}`);
     return response.data;
-  } catch (err) {s
+  } catch (err) {
     console.log(err);
   }
 }

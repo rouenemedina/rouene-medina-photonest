@@ -25,27 +25,6 @@ function PhotoUpload({ onFileChange }) {
     onFileChange(file);
   };
 
-  //assumption: only 1 file is uploaded
-  // const handleUpload = async () => {
-  //   if (!imageFile) {
-  //     console.log("No file selected.");
-  //     return;
-  //   }
-
-  //   const formData = new FormData();
-  //   formData.append("file", imageFile);
-
-  //   try {
-  //     const response = await axios.post(`${API_URL}/${formType}/upload`, formData, {
-  //       headers: { "Content-Type": "multipart/form-data" },
-  //     });
-  //     const { imageURL } = response.data.url;
-  //     setUploadImageURL(imageURL);
-  //   } catch (err) {
-  //     console.log("Error uploading image: ", err);
-  //   }
-  // };
-
   return (
     <>
       <main>

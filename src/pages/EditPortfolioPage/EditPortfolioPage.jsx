@@ -14,7 +14,6 @@ function EditPortfolioPage() {
   // const userId = 4;
   const navigate = useNavigate();
   const userId= sessionStorage.getItem("photonest_user_id");
-  console.log(userId);
 
   useEffect(() => {
     if(!userId){

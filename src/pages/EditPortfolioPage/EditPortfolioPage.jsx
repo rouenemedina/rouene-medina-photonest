@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import EditHero from "../../components/EditHero/EditHero";
 import EditWork from "../../components/EditWork/EditWork";
+import EditGallery from "../../components/EditGallery/EditGallery";
 
 function EditPortfolioPage() {
   //TODO : fix once login is integrated with EditPortfolio page
@@ -26,6 +27,7 @@ function EditPortfolioPage() {
       <main>
         <EditHero userId={userId} />
         <EditWork userId={userId} />
+        <EditGallery />
       </main>
     </>
   );

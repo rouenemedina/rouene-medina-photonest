@@ -9,17 +9,19 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function EditWork({ workId, userId }) {
   const [editWorkFormData, setEditWorkFormData] = useState({
-    work_title: "",
+    work_title1: "",
+    work_title2: "",
+    work_title3: "",
     user_id: userId,
-    file: "",
   });
-
   //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
   //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [uploadedFile, setUploadedFile] = useState(null);
+  const [uploadedFile1, setUploadedFile1] = useState(null);
+  const [uploadedFile2, setUploadedFile2] = useState(null);
+  const [uploadedFile3, setUploadedFile3] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const navigate = useNavigate();
 
@@ -34,18 +36,29 @@ function EditWork({ workId, userId }) {
     setEditWorkFormData({ ...editWorkFormData, [name]: value });
   };
 
-  const handleFileChange = (file) => {
-    setUploadedFile(file);
+  const handleFileChange1 = (file) => {
+    setUploadedFile1(file);
+  };
+
+  const handleFileChange2 = (file) => {
+    setUploadedFile2(file);
+  };
+
+  const handleFileChange3 = (file) => {
+    setUploadedFile3(file);
   };
 
   const handleReset = () => {
     setEditWorkFormData({
       work_id: workId,
-      work_title,
+      work_title1: "",
+      work_title2: "",
+      work_title3: "",
       user_id: userId,
-      file: "",
     });
-    setUploadedFile(null);
+    setUploadedFile1(null);
+    setUploadedFile2(null);
+    setUploadedFile3(null);
     setFormErrors({});
     setError(null);
     setSuccess(false);
@@ -72,13 +85,18 @@ function EditWork({ workId, userId }) {
     }
 
     const updatedEditWorkFormData = new FormData();
+
     updatedEditWorkFormData.append("work_id", editWorkFormData.work_id);
-    updatedEditWorkFormData.append("work_title", editWorkFormData.work_title);
+    updatedEditWorkFormData.append("work_title1", editWorkFormData.work_title1);
+    updatedEditWorkFormData.append("work_title2", editWorkFormData.work_title2);
+    updatedEditWorkFormData.append("work_title3", editWorkFormData.work_title3);
     updatedEditWorkFormData.append("user_id", editWorkFormData.user_id);
-    updatedEditWorkFormData.append("file", uploadedFile);
+    updatedEditWorkFormData.append("files", uploadedFile1);
+    updatedEditWorkFormData.append("files", uploadedFile2);
+    updatedEditWorkFormData.append("files", uploadedFile3);
 
     try {
-      await axios.post(`${API_URL}/work/post`);
+      await axios.post(`${API_URL}/work/upload`, updatedEditWorkFormData);
       setSuccess(true);
       setError(null);
       handleReset();
@@ -93,48 +111,48 @@ function EditWork({ workId, userId }) {
     <main className="editWork">
       <form className="editWork__form" onSubmit={handleSubmit}>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange1} formType="work"/>
           <article className="editWork__card">
-            <label htmlFor="work_title" className="editWork__label">
+            <label htmlFor="work_title1" className="editWork__label">
               TITLE:
             </label>
             <input
               type="text"
-              name="work_title"
+              name="work_title1"
               className="editWork__input"
-              value={editWorkFormData.work_title}
+              value={editWorkFormData.work_title1}
               onChange={handleChange}
               placeholder="Work Title"
             />
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange2} formType="work"/>
           <article className="editWork__card">
-            <label htmlFor="work_title" className="editWork__label">
+            <label htmlFor="work_title2" className="editWork__label">
               TITLE:
             </label>
             <input
               type="text"
-              name="work_title"
+              name="work_title2"
               className="editWork__input"
-              value={editWorkFormData.work_title}
+              value={editWorkFormData.work_title2}
               onChange={handleChange}
               placeholder="Work Title"
             />
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange3} formType="work"/>
           <article className="editWork__card">
-            <label htmlFor="work_title" className="editWork__label">
+            <label htmlFor="work_title3" className="editWork__label">
               TITLE:
             </label>
             <input
               type="text"
-              name="work_title"
+              name="work_title3"
               className="editWork__input"
-              value={editWorkFormData.work_title}
+              value={editWorkFormData.work_title3}
               onChange={handleChange}
               placeholder="Work Title"
             />

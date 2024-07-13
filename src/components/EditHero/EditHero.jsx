@@ -16,7 +16,6 @@ function EditHero({ userId }) {
   const [editHeroFormData, setEditHeroFormData] = useState({
     hero_description: "",
     user_id: userId,
-    file: "",
   });
   //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
@@ -46,7 +45,6 @@ function EditHero({ userId }) {
     setEditHeroFormData({
       hero_description: "",
       user_id: userId,
-      file: "",
     });
     setUploadedFile(null);
     setFormErrors({});
@@ -68,7 +66,6 @@ function EditHero({ userId }) {
   };
 
   const handleSubmit = async (event) => {
-    console.log("entered submit");
     event.preventDefault();
 
     const errors = validate(editHeroFormData);
@@ -104,7 +101,7 @@ function EditHero({ userId }) {
   return (
     <main className="editHero">
       <form className="editHero__form" onSubmit={handleSubmit}>
-        <PhotoUpload onFileChange={handleFileChange} formType="hero"/>
+        <PhotoUpload onFileChange={handleFileChange} />
         <section className="editHero__container">
           <label htmlFor="hero_description" className="editHero__label">
             DESCRIPTION:

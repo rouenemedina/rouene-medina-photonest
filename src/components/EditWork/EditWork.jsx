@@ -7,7 +7,7 @@ import Buttons from "../Buttons/Buttons";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function EditWork({ workId, userId }) {
+function EditWork({ userId }) {
   const [editWorkFormData, setEditWorkFormData] = useState({
     work_title1: "",
     work_title2: "",

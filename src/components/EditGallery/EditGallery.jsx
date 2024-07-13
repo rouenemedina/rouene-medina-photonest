@@ -1,13 +1,16 @@
 import "./EditGallery.scss";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import PhotoUploadMultiple from "../PhotoUploadMultiple/PhotoUploadMultiple";
 import Buttons from "../Buttons/Buttons";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function EditGallery() {
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+function EditGallery({ userId }) {
+  const [uploadedFiles, setUploadedFiles] = useState({
+    files: [],
+  });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -20,17 +23,18 @@ function EditGallery() {
   }, [redirect, navigate]);
 
   const handleFileChange = (files) => {
-    setUploadedFiles(files);
-  }
+    setUploadedFiles((prevState) => ({...prevState, files: files}));
+  };
 
   const handleReset = () => {
-    setUploadedFiles([]);
+    setUploadedFiles({ files: [] });
     setError(null);
     setSuccess(false);
     setRedirect(true);
   };
 
   const handleSubmit = async (event) => {
+    console.log("entered submit");
     event.preventDefault();
 
     if (uploadedFiles.length === 0) {
@@ -38,20 +42,21 @@ function EditGallery() {
       return;
     }
 
-    const formData = new FormData();
-    uploadedFiles.forEach((file) => {
-      formData.append("files", file);
+    const updatedEditGalleryData = new FormData();
+    uploadedFiles.files.forEach((file) => {
+      updatedEditGalleryData.append("files", file);
     });
+    updatedEditGalleryData.append("userId", uploadedFiles.userId)
 
     try {
-      await axios.post(`${API_URL}/${formType}/upload`, formData, {
+      await axios.post(`${API_URL}/gallery/upload`, updatedEditGalleryData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setSuccess(true);
       setError(null);
       handleReset();
     } catch (err) {
-      console.log(err);
+      console.log(err.response || err.message);
       setSuccess(false);
       setError("Error uploading files. Please try again.");
     }
@@ -62,7 +67,7 @@ function EditGallery() {
       <main className="editGallery">
         <h2 className="editGallery__title">Edit Gallery:</h2>
         <form className="editGallery__form" onSubmit={handleSubmit}>
-          <PhotoUploadMultiple onFileChange={handleFileChange}/>
+          <PhotoUploadMultiple onFileChange={handleFileChange} />
           <Buttons showSubmit />
         </form>
       </main>

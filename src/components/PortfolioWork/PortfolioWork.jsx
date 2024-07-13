@@ -21,7 +21,6 @@ function PortfolioWork() {
     async function getWorkDetails() {
       try {
         setWorkDetails(await getWorkDetailsData(userId));
-
         setLoadingWorkDetails(false);
       } catch (err) {
         console.log("Error fetching data", err);
@@ -48,6 +47,10 @@ function PortfolioWork() {
 
   if (loadingWorkDetails) {
     return <p> Loading Portfolio Work Details data... </p>;
+  }
+
+  if (error) {
+    return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
   return (

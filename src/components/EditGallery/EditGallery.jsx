@@ -9,6 +9,7 @@ const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function EditGallery({ userId }) {
   const [uploadedFiles, setUploadedFiles] = useState({
+    userId: userId,
     files: [],
   });
   const [error, setError] = useState(null);
@@ -27,7 +28,7 @@ function EditGallery({ userId }) {
   };
 
   const handleReset = () => {
-    setUploadedFiles({ files: [] });
+    setUploadedFiles({ userId: userId, files: [] });
     setError(null);
     setSuccess(false);
     setRedirect(true);
@@ -47,6 +48,9 @@ function EditGallery({ userId }) {
       updatedEditGalleryData.append("files", file);
     });
     updatedEditGalleryData.append("userId", uploadedFiles.userId)
+
+    console.log(updatedEditGalleryData);
+    console.log(`${API_URL}/gallery/upload`);
 
     try {
       await axios.post(`${API_URL}/gallery/upload`, updatedEditGalleryData, {

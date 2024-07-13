@@ -1,7 +1,35 @@
 import "./PortfolioWork.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import getWorkDetailsData from "../../utils/getWorkDetailsData";
 
 function PortfolioWork() {
+  const [workDetails, setWorkDetails] = useState(null);
+  const [loadingWorkDetails, setLoadingWorkDetails] = useState(true);
+  const [error, setError] = useState(false);
+  const [imageOrientation, setImageOrientation] = useState("");
+  const navigate = useNavigate();
+
+  const userId= sessionStorage.getItem("photonest_user_id");
+
+  useEffect(() => {
+    if(!userId){
+      navigate("/login");
+      return;
+    }
+
+    async function getWorkDetails() {
+        try{
+            setWorkDetails(await getWorkDetailsData(userId));
+            setLoadingWorkDetails(false);
+        } catch(err){
+            console.log("Error fetching data", err)
+            setError(true);
+        }
+    }
+    getWorkDetails();
+  }, [userId, navigate]);
+
   return (
     <>
       <section className="portfolio__work">
@@ -9,35 +37,32 @@ function PortfolioWork() {
         <section className="portfolio__container">
           <article className="portfolio__card">
             <img
-              src={img2}
+              //   src={}
               alt="featured work"
               className="portfolio__img"
             ></img>
             <div className="portfolio__subcard">
               <h3>TITLE</h3>
-              <h3>DATE</h3>
             </div>
           </article>
           <article className="portfolio__card">
             <img
-              src={img3}
+              //   src={}
               alt="featured work"
               className="portfolio__img"
             ></img>
             <div className="portfolio__subcard">
               <h3>TITLE</h3>
-              <h3>DATE</h3>
             </div>
           </article>
           <article className="portfolio__card">
             <img
-              src={img4}
+              //   src={}
               alt="featured work"
               className="portfolio__img"
             ></img>
             <div className="portfolio__subcard">
               <h3>TITLE</h3>
-              <h3>DATE</h3>
             </div>
           </article>
         </section>

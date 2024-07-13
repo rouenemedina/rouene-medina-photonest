@@ -1,8 +1,9 @@
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
 import "./EditHero.scss";
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
 
 //setup the forms
@@ -23,6 +24,14 @@ function EditHero({ userId }) {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (redirect) {
+      navigate("/portfolio");
+    }
+  }, [redirect, navigate]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,21 +42,35 @@ function EditHero({ userId }) {
     setUploadedFile(file);
   };
 
+  const handleReset = () => {
+    setEditHeroFormData({
+      hero_description: "",
+      user_id: userId,
+      file: "",
+    });
+    setUploadedFile(null);
+    setFormErrors({});
+    setError(null);
+    setSuccess(false);
+    setRedirect(true);
+  };
+
   //to store the updated formData to a variable
   //post endpoint
   //handle reset
 
+  const validate = (value) => {
+    const errors = {};
+    if (!value.hero_description) {
+      errors.hero_description = "Please fill out the required field.";
+    }
+    return errors;
+  };
+
   const handleSubmit = async (event) => {
+    console.log("entered submit");
     event.preventDefault();
 
-    //validate the form
-    const validate = (value) => {
-      let errors = {};
-      if (!value.hero_description) {
-        errors.hero_description = "Please fill out the required field.";
-      }
-      return errors;
-    };
     const errors = validate(editHeroFormData);
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
@@ -56,42 +79,32 @@ function EditHero({ userId }) {
       setFormErrors({});
     }
 
+    //TODO add function to validate image data, check aspect ratio, or minimum dimensions, to make sure that my site won't break when a bad photo is uplaoded
+
     const updatedEditHeroFormData = new FormData();
     updatedEditHeroFormData.append(
       "hero_description",
       editHeroFormData.hero_description
     );
-    updatedEditHeroFormData.append(
-      "user_id", editHeroFormData.user_id
-    );
-    updatedEditHeroFormData.append(
-      "file", uploadedFile
-    );
+    updatedEditHeroFormData.append("user_id", editHeroFormData.user_id);
+    updatedEditHeroFormData.append("file", uploadedFile);
 
     try {
       await axios.post(`${API_URL}/hero/upload`, updatedEditHeroFormData);
       setSuccess(true);
       setError(null);
+      handleReset();
     } catch (err) {
       console.log(err);
       setSuccess(false);
-      setError("Error uploading file. Please try again.")
+      setError("Error uploading file. Please try again.");
     }
-
-    const handleReset = () => {
-      setEditHeroFormData({
-        hero_description: "",
-        user_id: userId,
-        file: null,
-      })
-      setUploadedFile(null);
-    };
   };
 
   return (
     <main className="editHero">
       <form className="editHero__form" onSubmit={handleSubmit}>
-        <PhotoUpload onFileChange={handleFileChange} />
+        <PhotoUpload onFileChange={handleFileChange} formType="hero"/>
         <section className="editHero__container">
           <label htmlFor="hero_description" className="editHero__label">
             DESCRIPTION:

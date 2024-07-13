@@ -1,19 +1,23 @@
 import "./PortfolioHero.scss";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import getHeroDetailsData from "../../utils/getHeroDetailsData";
-import img1 from "../../assets/images/vadim-paripa-tEFItLGn0uc-unsplash.jpg";
 
 function PortfolioHero() {
   const [heroDetails, setHeroDetails] = useState(null);
   const [loadingHeroDetails, setLoadingHeroDetails] = useState(true);
   const [error, setError] = useState(false);
   const [imageOrientation, setImageOrientation] = useState("");
+  const navigate = useNavigate();
 
-  //TODO : fix once login is integrated
-  //const userId= sessionStorage.getItem("photonest_user_id");
-  const userId = 4;
+  const userId= sessionStorage.getItem("photonest_user_id");
 
   useEffect(() => {
+    if(!userId){
+      navigate("/login");
+      return;
+    }
+
     async function getHeroDetails() {
         try{
             setHeroDetails(await getHeroDetailsData(userId));
@@ -24,7 +28,7 @@ function PortfolioHero() {
         }
     }
     getHeroDetails();
-  }, []);
+  }, [userId, navigate]);
 
   useEffect(() => {
     if (heroDetails && heroDetails.hero_url) {

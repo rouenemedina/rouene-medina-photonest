@@ -1,21 +1,10 @@
 import "./PhotoUpload.scss";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-//POST endpoint from my server
-//will return a url for the uploaded photo
-
-//setup the edit form
-//handle the change when there is a user file upload
-//handle upload
-//get the url for the uploaded photo
-//preview the photo
-//submit the edit form
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function PhotoUpload({ onFileChange }) {
+function PhotoUpload({ onFileChange, formType }) {
   const [uploadImageURL, setUploadImageURL] = useState(null);
   const [imageFile, setImageFile] = useState(null);
 
@@ -47,7 +36,7 @@ function PhotoUpload({ onFileChange }) {
     formData.append("file", imageFile);
 
     try {
-      const response = await axios.post(`${API_URL}/hero/upload`, formData, {
+      const response = await axios.post(`${API_URL}/${formType}/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       const { imageURL } = response.data.url;
@@ -65,7 +54,7 @@ function PhotoUpload({ onFileChange }) {
             <img src={uploadImageURL} alt="uploaded image" className="photoUpload__img"></img>
           </section>
         )}
-        <input type="file" onChange={handleChange} />
+        <input type="file" onChange={handleChange}/>
       </main>
     </>
   );

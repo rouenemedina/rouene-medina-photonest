@@ -4,15 +4,21 @@
 @use "../../styles/partials/typography" as *;
 
 .editHero {
-  padding: 2rem;
+  padding: 3rem;
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2.5rem;
     background-color: $secondary-alabaster;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   &__description {
@@ -27,6 +33,7 @@
 
     &::placeholder {
         @include placeholder-style;
+        padding: 0.5rem;
         color: $secondary-slategray;
       }
   

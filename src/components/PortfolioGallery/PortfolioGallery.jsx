@@ -1,26 +1,51 @@
 import "./PortfolioGallery.scss";
-import React from "react";
-import img1 from "../../assets/images/elvis-bekmanis-WJc87MVcDaA-unsplash.jpg";
-import img2 from "../../assets/images/jonathan-borba-eg-72fI9wK4-unsplash.jpg";
-import img3 from "../../assets/images/samantha-gades-7JUDLPlA114-unsplash.jpg";
-import img4 from "../../assets/images/sandy-millar-8vaQKYnawHw-unsplash.jpg";
-import img5 from "../../assets/images/vadim-paripa-PuXtB1B4zL8-unsplash.jpg";
-import img6 from "../../assets/images/irina-iriser-Xu5h9W--N4k-unsplash.jpg";
-import img7 from "../../assets/images/katelyn-macmillan-ExjpauryqzA-unsplash.jpg";
-import img8 from "../../assets/images/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import getGalleryDetailsData from "../../utils/getGalleryDetailsData";
 
 function PortfolioGallery() {
+  const [galleryDetails, setGalleryDetails] = useState(null);
+  const [loadingGalleryDetails, setLoadingGalleryDetails] = useState(true);
+  const [error, setError] = useState(false);
+  const [imageOrientation, setImageOrientation] = useState("");
+  const navigate = useNavigate();
+
+  const userId = sessionStorage.getItem("photonest_user_id");
+
+  useEffect(() => {
+    if (!userId) {
+      navigate("/login");
+      return;
+    }
+
+    async function getGalleryDetails() {
+      try {
+        setGalleryDetails(await getGalleryDetailsData(userId));
+
+        setLoadingGalleryDetails(false);
+      } catch (err) {
+        console.log("Error fetching data", err);
+        setError(true);
+      }
+    }
+    getGalleryDetails();
+  }, [userId, navigate]);
+
+  if (loadingGalleryDetails) {
+    return <p> Loading Galleries... </p>;
+  }
   return (
-    <main>
-      <section className="gallery">
-        <img src={img1} alt="gallery image" className="gallery__img"></img>
-        <img src={img2} alt="gallery image" className="gallery__img"></img>
-        <img src={img3} alt="gallery image" className="gallery__img"></img>
-        <img src={img4} alt="gallery image" className="gallery__img"></img>
-        <img src={img5} alt="gallery image" className="gallery__img"></img>
-        <img src={img6} alt="gallery image" className="gallery__img"></img>
-        <img src={img7} alt="gallery image" className="gallery__img"></img>
-        <img src={img8} alt="gallery image" className="gallery__img"></img>
+    <main className="gallery">
+      <section className="gallery__container">
+        {galleryDetails.map((image) => {
+          return (
+            <img
+            src={image.gallery_url}
+            alt="gallery image"
+            className="gallery__img"
+            ></img>
+          )
+        })}
       </section>
     </main>
   );

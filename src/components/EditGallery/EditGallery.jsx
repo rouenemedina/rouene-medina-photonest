@@ -47,10 +47,7 @@ function EditGallery({ userId }) {
     uploadedFiles.files.forEach((file) => {
       updatedEditGalleryData.append("files", file);
     });
-    updatedEditGalleryData.append("userId", uploadedFiles.userId)
-
-    console.log(updatedEditGalleryData);
-    console.log(`${API_URL}/gallery/upload`);
+    updatedEditGalleryData.append("user_id", uploadedFiles.userId)
 
     try {
       await axios.post(`${API_URL}/gallery/upload`, updatedEditGalleryData, {
@@ -69,7 +66,7 @@ function EditGallery({ userId }) {
   return (
     <>
       <main className="editGallery">
-        <h2 className="editGallery__title">Edit Gallery:</h2>
+        <h2 className="editGallery__title">GALLERY SECTION:</h2>
         <form className="editGallery__form" onSubmit={handleSubmit}>
           <PhotoUploadMultiple onFileChange={handleFileChange} />
           <Buttons showSubmit />

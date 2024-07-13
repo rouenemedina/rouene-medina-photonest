@@ -100,6 +100,7 @@ function EditHero({ userId }) {
 
   return (
     <main className="editHero">
+      <h2>HERO SECTION:</h2>
       <form className="editHero__form" onSubmit={handleSubmit}>
         <PhotoUpload onFileChange={handleFileChange} />
         <section className="editHero__container">

@@ -109,9 +109,10 @@ function EditWork({ userId }) {
 
   return (
     <main className="editWork">
+      <h2>FEATURED WORK SECTION:</h2>
       <form className="editWork__form" onSubmit={handleSubmit}>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange1} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange1} formType="work" />
           <article className="editWork__card">
             <label htmlFor="work_title1" className="editWork__label">
               TITLE:
@@ -127,7 +128,7 @@ function EditWork({ userId }) {
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange2} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange2} formType="work" />
           <article className="editWork__card">
             <label htmlFor="work_title2" className="editWork__label">
               TITLE:
@@ -143,7 +144,7 @@ function EditWork({ userId }) {
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange3} formType="work"/>
+          <PhotoUpload onFileChange={handleFileChange3} formType="work" />
           <article className="editWork__card">
             <label htmlFor="work_title3" className="editWork__label">
               TITLE:
@@ -160,7 +161,6 @@ function EditWork({ userId }) {
         </section>
         <Buttons showSubmit />
       </form>
-      
     </main>
   );
 }

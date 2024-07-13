@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header";
 import EditHero from "../../components/EditHero/EditHero";
 import EditWork from "../../components/EditWork/EditWork";
 import EditGallery from "../../components/EditGallery/EditGallery";
+import EditAbout from "../../components/EditAbout/EditAbout";
 
 function EditPortfolioPage() {
   //TODO : fix once login is integrated with EditPortfolio page
@@ -26,8 +27,10 @@ function EditPortfolioPage() {
     <>
       <Header />
       <main>
+        <h1>Edit Portfolio:</h1>
         <EditHero userId={userId} />
         <EditWork userId={userId} />
+        <EditAbout userId={userId} />
         <EditGallery userId={userId} />
       </main>
     </>

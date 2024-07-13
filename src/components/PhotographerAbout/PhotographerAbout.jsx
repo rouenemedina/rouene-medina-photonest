@@ -1,10 +1,10 @@
-import "./PhotographersSection.scss";
+import "./PhotographerAbout.scss";
 import React from "react";
 import PhotoImg1 from "../../assets/images/christopher-campbell-Xo4YvBp6IBM-unsplash.jpg";
 import WorkImg1 from "../../assets/images/dmitry-schemelev-OEnKKXvdbDU-unsplash.jpg";
 import { Link } from "react-router-dom";
 
-function PhotographersSection() {
+function PhotographerAbout() {
   return (
     <main>
       <section className="photographer">
@@ -45,4 +45,4 @@ function PhotographersSection() {
   );
 }
 
-export default PhotographersSection;
+export default PhotographerAbout;

@@ -1,12 +1,16 @@
 import "./EditAbout.scss";
-import React from 'react';
+import React from "react";
 
 function EditAbout() {
-    return (
-        <>
+  return (
+    <>
+      <main>
+        <form>
             
-        </>
-    );
+        </form>
+      </main>
+    </>
+  );
 }
 
 export default EditAbout;

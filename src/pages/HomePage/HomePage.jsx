@@ -2,7 +2,6 @@ import "./HomePage.scss";
 import React from "react";
 import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
-import PhotographersSection from "../../components/PhotographersSection/PhotographersSection";
 
 function HomePage() {
   return (
@@ -12,7 +11,6 @@ function HomePage() {
         <Hero />
       </header>
       {/* <main>
-        <PhotographersSection />
       </main> */}
     </>
   );

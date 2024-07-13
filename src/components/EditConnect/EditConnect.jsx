@@ -1,4 +1,4 @@
-import "./EditHero.scss";
+import "./EditConnect.scss";
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
@@ -6,15 +6,11 @@ import { useNavigate } from "react-router-dom";
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
 import Buttons from "../Buttons/Buttons";
 
-//setup the forms
-//handle the change when there is a user input
-//handle submit or handle upload
-//handle errors
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
-function EditHero({ userId }) {
-  const [editHeroFormData, setEditHeroFormData] = useState({
-    hero_description: "",
+function EditConnect({ userId }) {
+  const [editConnectFormData, setEditConnectFormData] = useState({
+    connect_description: "",
     user_id: userId,
   });
   //this is for handling errors in the form
@@ -34,7 +30,7 @@ function EditHero({ userId }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setEditHeroFormData({ ...editHeroFormData, [name]: value });
+    setEditConnectFormData({ ...editConnectFormData, [name]: value });
   };
 
   const handleFileChange = (file) => {
@@ -42,8 +38,8 @@ function EditHero({ userId }) {
   };
 
   const handleReset = () => {
-    setEditHeroFormData({
-      hero_description: "",
+    setEditConnectFormData({
+      connect_description: "",
       user_id: userId,
     });
     setUploadedFile(null);
@@ -53,14 +49,10 @@ function EditHero({ userId }) {
     setRedirect(true);
   };
 
-  //to store the updated formData to a variable
-  //post endpoint
-  //handle reset
-
   const validate = (value) => {
     const errors = {};
-    if (!value.hero_description) {
-      errors.hero_description = "Please fill out the required field.";
+    if (!value.connect_description) {
+      errors.connect_description = "Please fill out the required field.";
     }
     return errors;
   };
@@ -68,7 +60,7 @@ function EditHero({ userId }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const errors = validate(editHeroFormData);
+    const errors = validate(editConnectFormData);
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return;
@@ -78,16 +70,16 @@ function EditHero({ userId }) {
 
     //TODO add function to validate image data, check aspect ratio, or minimum dimensions, to make sure that my site won't break when a bad photo is uplaoded
 
-    const updatedEditHeroFormData = new FormData();
-    updatedEditHeroFormData.append(
-      "hero_description",
-      editHeroFormData.hero_description
+    const updatedEditConnectFormData = new FormData();
+    updatedEditConnectFormData.append(
+      "connect_description",
+      editConnectFormData.connect_description
     );
-    updatedEditHeroFormData.append("user_id", editHeroFormData.user_id);
-    updatedEditHeroFormData.append("file", uploadedFile);
+    updatedEditConnectFormData.append("user_id", editConnectFormData.user_id);
+    updatedEditConnectFormData.append("file", uploadedFile);
 
     try {
-      await axios.post(`${API_URL}/hero/upload`, updatedEditHeroFormData);
+      await axios.post(`${API_URL}/connect/upload`, updatedEditConnectFormData);
       setSuccess(true);
       setError(null);
       handleReset();
@@ -99,26 +91,26 @@ function EditHero({ userId }) {
   };
 
   return (
-    <main className="editHero">
-      <h2>HERO SECTION:</h2>
-      <form className="editHero__form" onSubmit={handleSubmit}>
+    <main className="editConnect">
+      <h2>CONNECT SECTION:</h2>
+      <form className="editConnect__form" onSubmit={handleSubmit}>
         <PhotoUpload onFileChange={handleFileChange} />
-        <section className="editHero__container">
-          <label htmlFor="hero_description" className="editHero__label">
+        <section className="editConnect__container">
+          <label htmlFor="connect_description" className="editConnect__label">
             DESCRIPTION:
           </label>
           <textarea
             type="textarea"
-            name="hero_description"
-            className="editHero__description"
+            name="connect_description"
+            className="editConnect__description"
             placeholder="Enter image description."
-            value={editHeroFormData.hero_description}
+            value={editConnectFormData.connect_description}
             onChange={handleChange}
             required
           ></textarea>
-          {formErrors.hero_description && (
-            <span id="heroDescriptionError" className="editHero__error">
-              {formErrors.hero_description}
+          {formErrors.connect_description && (
+            <span id="connectDescriptionError" className="editConnect__error">
+              {formErrors.connect_description}
             </span>
           )}
         </section>
@@ -128,4 +120,4 @@ function EditHero({ userId }) {
   );
 }
 
-export default EditHero;
+export default EditConnect;

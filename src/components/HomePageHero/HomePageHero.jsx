@@ -1,6 +1,6 @@
-import Buttons from "../Buttons/Buttons";
-import "./Hero.scss";
+import "./HomePageHero.scssHero.scss";
 import React from "react";
+import Buttons from "../Buttons/Buttons";
 
 function Hero() {
   return (

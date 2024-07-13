@@ -9,6 +9,8 @@ import ContactPage from './pages/ContactPage/ContactPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import EditPortfolioPage from './pages/EditPortfolioPage/EditPortfolioPage';
 
+//TODO: change the landing page
+
 function App() {
 
   return (

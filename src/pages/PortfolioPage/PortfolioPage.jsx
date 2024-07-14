@@ -20,8 +20,6 @@ function PortfolioPage() {
     }
   }, [userId, navigate]);
 
-  //TODO: add conditionals if there is no userId
-
   return (
     <>
       <Header />

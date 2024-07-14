@@ -8,7 +8,9 @@ function Buttons({
   showSignUp,
   showLogIn,
   showLogOut,
-  showContact
+  showContact,
+  showPortfolio,
+  showCreate
 }) {
   return (
     <div>
@@ -17,34 +19,49 @@ function Buttons({
           LEARN MORE
         </button>
       )}
-      {showSecondary && (
-        <button type="submit" className="button__secondary">
-          Cancel
-        </button>
-      )}
       {showContact && (
         <button type="submit" className="button__primary" >
           Let's Talk!
         </button>
       )}
-      {showSubmit && (
-        <button type="submit" className="button__submit">
-          Submit
-        </button>
-      )}
-      {showSignUp && (
-        <button type="submit" className="button__signup">
-          Sign Up
-        </button>
-      )}
-      {showLogIn && (
-        <button type="submit" className="button__login">
-          Log In
+
+      {showSecondary && (
+        <button type="submit" className="button__secondary">
+          Cancel
         </button>
       )}
       {showLogOut && (
         <button type="submit" className="button__secondary">
           Log Out
+        </button>
+      )}
+
+      {showSubmit && (
+        <button type="submit" className="button__submit">
+          Submit
+        </button>
+      )}
+      {showPortfolio && (
+        <button type="submit" className="button__submit">
+          My Portfolio
+        </button>
+      )}
+
+      {showCreate && (
+        <button type="submit" className="button__create">
+          Create My Portfolio
+        </button>
+      )}
+
+      {showSignUp && (
+        <button type="submit" className="button__signup">
+          Sign Up
+        </button>
+      )}
+
+      {showLogIn && (
+        <button type="submit" className="button__login">
+          Log In
         </button>
       )}
     </div>

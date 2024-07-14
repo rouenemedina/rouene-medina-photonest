@@ -1,9 +1,10 @@
 import "./DashboardPage.scss";
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/Header/Header";
 import Buttons from "../../components/Buttons/Buttons";
-import { Link, useNavigate } from "react-router-dom";
+import dashboardImg from "../../assets/images/z-dashboard.png";
 
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
@@ -99,20 +100,30 @@ function DashboardPage() {
               What are we doing today?{" "}
             </h3>
           </article>
+          <article className="dashboard__hero">
+            <Link to="/portfolio">
+              <Buttons showPortfolio />
+            </Link>
+            <img
+              src={dashboardImg}
+              alt="Dashboard Image"
+              className="dashboard__img"
+            ></img>
+          </article>
           <article className="dashboard__card">
             <p>First Name: {user.user_first_name}</p>
             <p>Last Name: {user.user_last_name}</p>
             <p>Email: {user.user_email}</p>
-            <p>
-              Forgot Password? 
-              <button 
-                type="button" 
-                onClick={resetPassword} 
+            <div className="dashboard__subcard">
+              <p>Forgot Password?</p>
+              <button
+                type="button"
+                onClick={resetPassword}
                 className="dashboard__reset"
               >
                 RESET PASSWORD
               </button>
-            </p>
+            </div>
           </article>
         </section>
         <form className="dashboard__form" onSubmit={handleSubmit}>

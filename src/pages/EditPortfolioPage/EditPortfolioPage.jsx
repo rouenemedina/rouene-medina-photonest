@@ -12,13 +12,16 @@ import EditGallery from "../../components/EditGallery/EditGallery";
 function EditPortfolioPage() {
   const navigate = useNavigate();
   const userId= sessionStorage.getItem("photonest_user_id");
+  const userType = sessionStorage.getItem("photonest_user_type");
+  console.log(userType);
+
 
   useEffect(() => {
-    if(!userId){
+    if(!userId || userType !== "photographer"){
       navigate("/login");
       return;
     }
-  }, [userId, navigate]);
+  }, [userId, userType, navigate]);
 
   return (
     <>

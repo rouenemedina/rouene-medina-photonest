@@ -32,10 +32,11 @@ function LogInPage() {
         user_email: formData.user_email,
         user_password: formData.user_password,
       });
-
+      console.log(response.data);
       sessionStorage.setItem("token", response.data.token);
       sessionStorage.setItem("photonest_user_id", response.data.user_id);
-  
+      sessionStorage.setItem("photonest_user_type", response.data.user_type);
+
       setError(null);
       navigate("/dashboard");
     } catch (err) {

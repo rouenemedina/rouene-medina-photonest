@@ -8,6 +8,7 @@ import PortfolioPage from './pages/PortfolioPage/PortfolioPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import EditPortfolioPage from './pages/EditPortfolioPage/EditPortfolioPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 //TODO: change the landing page
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/portfolio" element={<PortfolioPage />}></Route>
         <Route path="/editportfolio" element={<EditPortfolioPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
      </BrowserRouter>
     </>

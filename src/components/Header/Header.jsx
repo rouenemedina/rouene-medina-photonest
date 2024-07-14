@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdClose, MdOutlineMenu } from "react-icons/md";
 import logoImg from "../../assets/logo/Logo.png";
-import userImg from "../../assets/images/daniel-lincoln-NR705beN_CU-unsplash.jpg";
+import userImg from "../../assets/images/a-daniel-lincoln-NR705beN_CU-unsplash.jpg";
 import NavBar from "../NavBar/NavBar";
 
 function Header() {

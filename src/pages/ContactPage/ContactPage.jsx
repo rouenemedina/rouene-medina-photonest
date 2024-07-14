@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import ContactForm from "../../components/ContactForm/ContactForm";
-import img1 from "../../assets/images/stefen-tan-FWPu4IWk-wM-unsplash.jpg";
+import img1 from "../../assets/images/b-stefen-tan-FWPu4IWk-wM-unsplash.jpg";
 
 function ContactPage() {
   const [contactFormData, setContactFormData] = useState({

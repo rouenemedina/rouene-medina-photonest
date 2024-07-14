@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import logoImg from "../../assets/logo/Logo-2.png";
 
 function SignUpPage() {
   const [formData, setFormData] = useState({
@@ -93,6 +94,13 @@ function SignUpPage() {
 
   return (
     <main className="registration">
+      <section>
+        <img
+          src={logoImg}
+          alt="PhotoNest Logo"
+          className="registration__logo"
+        ></img>
+      </section>
       <section className="registration__wrapper">
         <article className="registration__container">
           <div className="registration__subcontainer">

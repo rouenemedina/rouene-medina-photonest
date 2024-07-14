@@ -29,8 +29,13 @@ function Header() {
   return (
     <nav className="header">
       <section className="header__name">
-        <img src={logoImg} alt="PhotoNest Logo" className="header__logo"></img>
-        {/* <h2>PhotoNest</h2> */}
+        <Link to="/">
+          <img
+            src={logoImg}
+            alt="PhotoNest Logo"
+            className="header__logo"
+          ></img>
+        </Link>
       </section>
       <section className="header__user">
         {click ? CloseMenu : HamburgerMenu}

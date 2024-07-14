@@ -4,7 +4,9 @@
 @use "../../styles/partials/typography" as *;
 
 .list {
+
   &__wrapper {
+    height: 100vh;
     background-color: $secondary-alabaster;
   }
 
@@ -17,10 +19,12 @@
 
     @include tablet {
       flex-direction: row;
+      padding: 2.5rem;
     }
 
     @include desktop {
       flex-direction: row;
+      padding: 4rem;
     }
   }
 
@@ -56,11 +60,13 @@
     }
 
     @include tablet {
-      height: 100%;
+      width: 12.1875rem;
+      height: 15.75rem;
     }
 
     @include desktop {
-      height: 100%;
+      width: 15rem;
+      height: 18rem;
     }
   }
 

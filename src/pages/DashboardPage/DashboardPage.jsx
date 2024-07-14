@@ -89,7 +89,7 @@ function DashboardPage() {
 
   //return the profile of the user (general: for photographers and clients);
   return (
-    <>
+    <div className="dashboard__wrapper">
       <Header />
       <main className="dashboard">
         <h2 className="dashboard__title">DASHBOARD</h2>
@@ -127,12 +127,12 @@ function DashboardPage() {
               </button>
             </div>
           </article>
+          <form className="dashboard__form" onSubmit={handleSubmit}>
+            <Buttons showLogOut onClick={logout} />
+          </form>
         </section>
-        <form className="dashboard__form" onSubmit={handleSubmit}>
-          <Buttons showLogOut onClick={logout} />
-        </form>
       </main>
-    </>
+    </div>
   );
 }
 

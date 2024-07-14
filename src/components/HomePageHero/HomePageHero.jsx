@@ -1,4 +1,4 @@
-import "./HomePageHero.scssHero.scss";
+import "./HomePageHero.scss";
 import React from "react";
 import Buttons from "../Buttons/Buttons";
 

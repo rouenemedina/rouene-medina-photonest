@@ -10,27 +10,40 @@
   justify-content: space-between;
   align-items: center;
 
+  @include desktop {
+    padding: 1rem 5rem;
+  }
+
+  &__name {
+    display: flex;
+  }
+
   &__logo {
-    width: 3rem;
+    width: 10rem;
     height: 100%;
   }
 
   &__hamburger {
-    width: 2.625rem;
+    width: 3rem;
     color: $background-eerieblack;
-
     position: absolute;
     right: 2%;
     cursor: pointer;
   }
 
   &__img {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: $secondary-slategray;
     box-sizing: border-box;
     border-radius: 50%;
     object-fit: cover;
     object-position: 0;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }

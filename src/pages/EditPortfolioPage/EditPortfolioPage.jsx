@@ -18,7 +18,7 @@ function EditPortfolioPage() {
 
   useEffect(() => {
     if(!userId || userType !== "photographer"){
-      navigate("/login");
+      navigate("/*");
       return;
     }
   }, [userId, userType, navigate]);

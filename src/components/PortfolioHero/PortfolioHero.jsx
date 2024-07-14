@@ -44,7 +44,7 @@ function PortfolioHero({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  if (!heroDetails) {
+  if(!heroDetails || heroDetails.length === 0){
     return;
   }
 

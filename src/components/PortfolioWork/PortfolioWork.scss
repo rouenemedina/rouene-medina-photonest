@@ -4,15 +4,34 @@
 @use "../../styles/partials/typography" as *;
 
 .portfolio {
-    &__work {
-        background-color: $secondary-alabaster;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        align-items: center;
-    
-        @include tablet {
-          padding: 1.5rem;
-        }
-      }
+  &__work {
+    background-color: $secondary-alabaster;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+
+    @include tablet {
+      padding: 1.5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    border-top: 1px solid $primary-CharcoalBlue;
+    padding: 2rem 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+  }
 }

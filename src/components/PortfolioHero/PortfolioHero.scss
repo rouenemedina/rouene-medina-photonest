@@ -37,6 +37,24 @@
         object-position: center -8rem;
       }
     }
+
+    @include desktop {
+      width: 50%;
+      height: 27rem;
+      display: flex;
+      object-fit: cover;
+      object-position: 0rem -22rem;
+      position: absolute;
+      right: 0rem;
+
+      &--landscape {
+        object-position: center;
+      }
+
+      &--portrait {
+        object-position: center -22rem;
+      }
+    }
   }
 
   &__pitch {

@@ -43,10 +43,14 @@ function PortfolioWork({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
+  if(!workDetails || workDetails.length === 0){
+    return;
+  }
+
   return (
     <>
       <section className="portfolio__work">
-        <h1 className="portfolio__title">Celebrating Timeless Love</h1>
+        <h1 className="portfolio__title">FEATURED WORK</h1>
         <section className="portfolio__container">
           {workDetails.map((work) => {
             return (

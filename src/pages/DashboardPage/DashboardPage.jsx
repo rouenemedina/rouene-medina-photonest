@@ -17,7 +17,7 @@ function DashboardPage() {
 
   useEffect(() => {
     if (redirect) {
-      navigate("/");
+      navigate("/login");
     }
   }, [redirect, navigate]);
 
@@ -50,6 +50,7 @@ function DashboardPage() {
     } catch (err) {
       console.log(err);
       setFailedAuth(true);
+      navigate("/login");
     }
     setIsLoading(false);
   };
@@ -85,6 +86,7 @@ function DashboardPage() {
     );
   }
   console.log(user);
+
   //return the profile of the user (general: for photographers and clients);
   return (
     <>

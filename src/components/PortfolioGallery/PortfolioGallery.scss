@@ -31,9 +31,9 @@
   }
 
   &__modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 500;
     left: 0;
     top: 0;
     width: 100%;
@@ -41,7 +41,6 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
 
-    /* Close button */
     &--close {
       color: #aaaaaa;
       float: right;
@@ -58,10 +57,10 @@
   }
 
   &__content {
+    width: 80%;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    margin: auto;
   }
 }

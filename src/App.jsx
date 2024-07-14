@@ -18,10 +18,10 @@ function App() {
     <>
      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignUpPage />}></Route>
+        <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/login" element={<LogInPage />}></Route>
         <Route path="/dashboard" element={<DashboardPage />}></Route>
-        <Route path="/home" element={<HomePage />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/profile" element={<PhotographerPage />}></Route>
         {/* <Route path="/profile/:id" element={<PortfolioPage />}></Route> */}
         <Route path="/portfolio" element={<PortfolioPage />}></Route>

@@ -1,6 +1,5 @@
 import "./PortfolioGallery.scss";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import getGalleryDetailsData from "../../utils/getGalleryDetailsData";
 
@@ -42,6 +41,10 @@ function PortfolioGallery({userId}) {
 
   if (error) {
     return <p>Error loading galleries. Please try again later.</p>;
+  }
+
+  if(!galleryDetails || galleryDetails.length === 0){
+    return;
   }
 
   return (

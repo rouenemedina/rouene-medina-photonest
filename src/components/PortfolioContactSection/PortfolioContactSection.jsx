@@ -30,6 +30,10 @@ function PortfolioContactSection({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
+  if(!connectDetails || connectDetails.length === 0){
+    return;
+  }
+
   return (
     <>
       <main className="connect">

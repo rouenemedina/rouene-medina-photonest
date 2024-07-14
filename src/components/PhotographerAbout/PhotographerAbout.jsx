@@ -1,6 +1,5 @@
 import "./PhotographerAbout.scss";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import getAboutDetailsData from "../../utils/getAboutDetailsData";
 
@@ -31,7 +30,10 @@ function PhotographerAbout({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  console.log(aboutDetails);
+  if (aboutDetails.length === 0) {
+    return;
+  }
+
   return (
     <main>
       <section className="photographer">
@@ -42,7 +44,7 @@ function PhotographerAbout({userId}) {
               alt="Photographer's Profile Photo"
               className="photographer__photo"
             ></img>
-            <Link to="/portfolio">
+            <Link to="/portfolio" className="photographer__link">
               <h1 className="photographer__name">MEET "{aboutDetails[0].about_name}"</h1>
             </Link>
           </div>

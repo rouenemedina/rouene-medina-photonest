@@ -5,6 +5,15 @@
 
 .contact {
     display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    @include desktop {
+        flex-direction: row;
+    }
 
     &__section {
     display: flex;
@@ -12,7 +21,6 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    // align-items: center;
     background-color: $background-gunmetal;
     }
 

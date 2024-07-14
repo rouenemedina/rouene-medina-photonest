@@ -1,25 +1,15 @@
 import "./PortfolioContactSection.scss";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
 import getConnectDetailsData from "../../utils/getConnectDetailsData";
 
-function PortfolioContactSection() {
+function PortfolioContactSection({userId}) {
   const [connectDetails, setConnectDetails] = useState(null);
   const [loadingConnectDetails, setLoadingConnectDetails] = useState(true);
   const [error, setError] = useState(false);
-  const [imageOrientation, setImageOrientation] = useState("");
-  const navigate = useNavigate();
-
-  const userId = sessionStorage.getItem("photonest_user_id");
 
   useEffect(() => {
-    if (!userId) {
-      navigate("/login");
-      return;
-    }
-
     async function getConnectDetails() {
       try {
         setConnectDetails(await getConnectDetailsData(userId));
@@ -30,7 +20,7 @@ function PortfolioContactSection() {
       }
     }
     getConnectDetails();
-  }, [userId, navigate]);
+  }, []);
 
   if (loadingConnectDetails) {
     return <p> Loading Connect Details data... </p>;

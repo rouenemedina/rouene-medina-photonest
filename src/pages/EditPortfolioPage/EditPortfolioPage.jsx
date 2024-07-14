@@ -23,8 +23,8 @@ function EditPortfolioPage() {
   return (
     <>
       <Header />
-      <main>
-        <h1>Edit Portfolio:</h1>
+      <main className="editPortfolio">
+        <h1 className="editPortfolio__title">Edit Portfolio:</h1>
         <EditHero userId={userId} />
         <EditWork userId={userId} />
         <EditAbout userId={userId} />

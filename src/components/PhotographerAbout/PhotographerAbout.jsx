@@ -1,26 +1,16 @@
 import "./PhotographerAbout.scss";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import getAboutDetailsData from "../../utils/getAboutDetailsData";
-// import PhotoImg1 from "../../assets/images/christopher-campbell-Xo4YvBp6IBM-unsplash.jpg";
-// import WorkImg1 from "../../assets/images/dmitry-schemelev-OEnKKXvdbDU-unsplash.jpg";
 import { Link } from "react-router-dom";
+import getAboutDetailsData from "../../utils/getAboutDetailsData";
 
-function PhotographerAbout() {
+
+function PhotographerAbout({userId}) {
   const [aboutDetails, setAboutDetails] = useState(null);
   const [loadingWorkDetails, setLoadingWorkDetails] = useState(true);
   const [error, setError] = useState(false);
-  const [imageOrientation, setImageOrientation] = useState("");
-  const navigate = useNavigate();
-
-  const userId = sessionStorage.getItem("photonest_user_id");
 
   useEffect(() => {
-    if (!userId) {
-      navigate("/login");
-      return;
-    }
-
     async function getAboutDetails() {
       try {
         setAboutDetails(await getAboutDetailsData(userId));
@@ -31,7 +21,7 @@ function PhotographerAbout() {
       }
     }
     getAboutDetails();
-  }, [userId, navigate]);
+  }, []);
 
   if (loadingWorkDetails) {
     return <p> Loading Photographer's information... </p>;
@@ -66,9 +56,6 @@ function PhotographerAbout() {
           </div>
         </article>
       </section>
-      {/* <section>
-      </section> */}
-      <section></section>
     </main>
   );
 }

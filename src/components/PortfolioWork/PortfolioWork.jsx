@@ -1,23 +1,13 @@
 import "./PortfolioWork.scss";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import getWorkDetailsData from "../../utils/getWorkDetailsData";
 
-function PortfolioWork() {
+function PortfolioWork({userId}) {
   const [workDetails, setWorkDetails] = useState(null);
   const [loadingWorkDetails, setLoadingWorkDetails] = useState(true);
   const [error, setError] = useState(false);
-  const [imageOrientation, setImageOrientation] = useState("");
-  const navigate = useNavigate();
-
-  const userId = sessionStorage.getItem("photonest_user_id");
 
   useEffect(() => {
-    if (!userId) {
-      navigate("/login");
-      return;
-    }
-
     async function getWorkDetails() {
       try {
         setWorkDetails(await getWorkDetailsData(userId));
@@ -28,7 +18,7 @@ function PortfolioWork() {
       }
     }
     getWorkDetails();
-  }, [userId, navigate]);
+  }, []);
 
   // useEffect(() => {
   //   if (workDetails && workDetails.work_url) {

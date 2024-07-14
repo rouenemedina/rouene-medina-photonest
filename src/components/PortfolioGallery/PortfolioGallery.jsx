@@ -6,23 +6,14 @@ import getGalleryDetailsData from "../../utils/getGalleryDetailsData";
 
 Modal.setAppElement("#root");
 
-function PortfolioGallery() {
+function PortfolioGallery({userId}) {
   const [galleryDetails, setGalleryDetails] = useState(null);
   const [loadingGalleryDetails, setLoadingGalleryDetails] = useState(true);
   const [error, setError] = useState(false);
-  const [imageOrientation, setImageOrientation] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const userId = sessionStorage.getItem("photonest_user_id");
 
   useEffect(() => {
-    if (!userId) {
-      navigate("/login");
-      return;
-    }
-
     async function getGalleryDetails() {
       try {
         setGalleryDetails(await getGalleryDetailsData(userId));
@@ -33,7 +24,7 @@ function PortfolioGallery() {
       }
     }
     getGalleryDetails();
-  }, [userId, navigate]);
+  }, []);
 
   const openModal = (imageUrl) => {
     setSelectedImage(imageUrl);

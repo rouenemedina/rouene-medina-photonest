@@ -108,7 +108,7 @@ function EditWork({ userId }) {
 
   return (
     <main className="editWork">
-      <h2>FEATURED WORK SECTION:</h2>
+      <h2 className="editWork__title">FEATURED WORK SECTION:</h2>
       <form className="editWork__form" onSubmit={handleSubmit}>
         <section className="editWork__container">
           <PhotoUpload onFileChange={handleFileChange1}/>

@@ -92,7 +92,7 @@ function EditConnect({ userId }) {
 
   return (
     <main className="editConnect">
-      <h2>CONNECT SECTION:</h2>
+      <h2 className="editConnect__title">CONNECT SECTION:</h2>
       <form className="editConnect__form" onSubmit={handleSubmit}>
         <PhotoUpload onFileChange={handleFileChange} />
         <section className="editConnect__container">

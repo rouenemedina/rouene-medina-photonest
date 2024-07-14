@@ -3,7 +3,6 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import HomePageHero from "../../components/HomePageHero/HomePageHero";
 
-
 function HomePage() {
   return (
     <>

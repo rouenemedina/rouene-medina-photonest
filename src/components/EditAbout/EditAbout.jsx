@@ -103,7 +103,7 @@ function EditAbout({ userId }) {
   return (
     <>
       <main className="editAbout">
-        <h2>ABOUT SECTION:</h2>
+        <h2 className="editAbout__title">ABOUT SECTION:</h2>
         <form className="editAbout__form" onSubmit={handleSubmit}>
           <PhotoUpload onFileChange={handleFileChange1} />
           <section className="editAbout__container">

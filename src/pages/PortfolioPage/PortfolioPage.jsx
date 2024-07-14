@@ -1,7 +1,7 @@
 import "./PortfolioPage.scss";
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import getFilesChecker from "../../utils/getFilesChecker";
 import Header from "../../components/Header/Header";
 import PortfolioGallery from "../../components/PortfolioGallery/PortfolioGallery";
@@ -13,10 +13,15 @@ import welcomeImg from "../../assets/images/z-welcome.png";
 import Buttons from "../../components/Buttons/Buttons";
 
 function PortfolioPage() {
-  const navigate = useNavigate();
-  const userId = sessionStorage.getItem("photonest_user_id");
   const [hasFiles, setHasFiles] = useState(false);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { photographerUserId } = useParams();
+
+  let userId = sessionStorage.getItem("photonest_user_id");
+
+  const isFromPhotographerRoute = location.pathname.startsWith('/photographers/');
 
   useEffect(() => {
     if (!userId) {
@@ -27,7 +32,7 @@ function PortfolioPage() {
     //check if user has files in the database
     const checkUserFiles = async () => {
       try {
-        const hasFiles = await getFilesChecker(userId);
+        const hasFiles = await getFilesChecker(isFromPhotographerRoute ? photographerUserId : userId);
         setHasFiles(hasFiles);
         setLoading(false);
       } catch (err) {
@@ -41,18 +46,18 @@ function PortfolioPage() {
   if (loading) {
     return <p> Loading data... </p>;
   }
-
+  console.log();
   return (
     <>
       <Header />
       <main className="portfolio">
         {hasFiles ? (
           <>
-            <PortfolioHero userId={userId} />
-            <PortfolioWork userId={userId} />
-            <PhotographerAbout userId={userId} />
-            <PortfolioContactSection userId={userId} />
-            <PortfolioGallery userId={userId} />
+            <PortfolioHero userId={isFromPhotographerRoute ? photographerUserId : userId} />
+            <PortfolioWork userId={isFromPhotographerRoute ? photographerUserId : userId} />
+            <PhotographerAbout userId={isFromPhotographerRoute ? photographerUserId : userId} />
+            <PortfolioContactSection userId={isFromPhotographerRoute ? photographerUserId : userId} />
+            <PortfolioGallery userId={isFromPhotographerRoute ? photographerUserId : userId} />
           </>
         ) : (
           <>

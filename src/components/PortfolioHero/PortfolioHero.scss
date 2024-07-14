@@ -40,7 +40,7 @@
 
     @include desktop {
       width: 50%;
-      height: 27rem;
+      height: 32rem;
       display: flex;
       object-fit: cover;
       object-position: 0rem -22rem;
@@ -59,13 +59,20 @@
 
   &__pitch {
     color: $secondary-alabaster;
-    padding: 1rem;
+    padding: 1.5rem 3rem 2.5rem 3rem;
 
     @include tablet {
       width: 40%;
       height: 25rem;
       display: flex;
       padding: 1rem 3rem;
+      align-items: center;
+    }
+
+    @include desktop {
+      height: 30rem;
+      display: flex;
+      padding: 1rem 4rem;
       align-items: center;
     }
   }

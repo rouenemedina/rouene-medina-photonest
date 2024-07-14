@@ -22,8 +22,8 @@ function App() {
         <Route path="/login" element={<LogInPage />}></Route>
         <Route path="/dashboard" element={<DashboardPage />}></Route>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/profile" element={<PhotographerPage />}></Route>
-        {/* <Route path="/profile/:id" element={<PortfolioPage />}></Route> */}
+        <Route path="/photographers" element={<PhotographerPage />}></Route>
+        <Route path="/photographers/:photographerUserId" element={<PortfolioPage />}></Route>
         <Route path="/portfolio" element={<PortfolioPage />}></Route>
         <Route path="/editportfolio" element={<EditPortfolioPage />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>

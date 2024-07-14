@@ -38,9 +38,21 @@ h1 {
 
 //section header
 h2 {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
+
+  @include tablet {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+
+  @include desktop {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
 }
 
 //subheader

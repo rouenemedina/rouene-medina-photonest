@@ -53,9 +53,9 @@ function LogInPage() {
           <article className="login__card">
             <h1 className="login__header">Welcome!</h1>
             <div className="login__subcard">
-              <h2 className="login__description">Not a member yet?</h2>
+              <h3 className="login__description">Not a member yet?</h3>
               <Link to="/signup" className="login__link">
-                <h2 className="login__sign">Sign up here!</h2>
+                <h3 className="login__sign">Sign up here!</h3>
               </Link>
             </div>
           </article>

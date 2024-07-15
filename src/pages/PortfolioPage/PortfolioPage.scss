@@ -27,14 +27,10 @@
     @include tablet {
       width: 100%;
       padding: 4rem;
-      // padding: 2rem 3rem 2rem 3rem;
-      // left: 3rem;
     }
 
     @include desktop {
       width: 100%;
-      // padding: 4rem 3rem 4rem 3rem;
-      // left: 7rem;
     }
   }
 

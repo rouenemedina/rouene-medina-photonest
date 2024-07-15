@@ -6,7 +6,6 @@
 .button {
   &__primary {
     width: auto;
-    // min-width: 4.4375rem;
     height: 2.25rem;
     color: $primary-Timberwolf;
     background-color: $primary-CharcoalBlue;
@@ -20,18 +19,15 @@
 
     @include tablet {
       max-width: 12.5rem;
-      // height: 2.375rem;
     }
 
     @include desktop {
       max-width: 12.5rem;
-      // height: 2.375rem;
     }
   }
 
   &__secondary {
     width: 100%;
-    // min-width: 4.4375rem;
     height: 2.25rem;
     color: $secondary-slategray;
     padding: 0.5rem 1rem;
@@ -46,13 +42,11 @@
 
     @include tablet {
       width: 9rem;
-      // max-width: 10rem;
       height: 2.375rem;
     }
 
     @include desktop {
       width: 7.8125rem;
-      // max-width: 8rem;
       height: 2.375rem;
     }
   }
@@ -115,19 +109,16 @@
     }
 
     @include tablet {
-      // max-width: 10.5rem;
       height: 2.375rem;
     }
 
     @include desktop {
-      // max-width: 10.5rem;
       height: 2.375rem;
     }
   }
 
   &__login {
     width: auto;
-    // min-width: 4.4375rem;
     height: 2.25rem;
     color: $primary-Peachcrayon;
     background-color: $background-gunmetal;
@@ -140,12 +131,10 @@
     }
 
     @include tablet {
-      // max-width: 10.5rem;
       height: 2.375rem;
     }
 
     @include desktop {
-      // max-width: 10.5rem;
       height: 2.375rem;
     }
   }

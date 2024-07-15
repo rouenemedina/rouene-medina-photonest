@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
 import getConnectDetailsData from "../../utils/getConnectDetailsData";
 
-function PortfolioContactSection({userId}) {
+function PortfolioContactSection({ userId }) {
   const [connectDetails, setConnectDetails] = useState(null);
   const [loadingConnectDetails, setLoadingConnectDetails] = useState(true);
   const [error, setError] = useState(false);
@@ -30,7 +30,7 @@ function PortfolioContactSection({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  if(!connectDetails || connectDetails.length === 0){
+  if (!connectDetails || connectDetails.length === 0) {
     return;
   }
 

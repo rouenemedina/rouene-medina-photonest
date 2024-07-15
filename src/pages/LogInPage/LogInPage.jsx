@@ -12,9 +12,7 @@ function LogInPage() {
     user_email: "",
     user_password: "",
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -24,7 +22,6 @@ function LogInPage() {
   };
 
   const handleSubmit = async (event) => {
-    console.log("login clicked");
     event.preventDefault();
 
     try {
@@ -32,16 +29,13 @@ function LogInPage() {
         user_email: formData.user_email,
         user_password: formData.user_password,
       });
-      console.log(response.data);
       sessionStorage.setItem("token", response.data.token);
       sessionStorage.setItem("photonest_user_id", response.data.user_id);
       sessionStorage.setItem("photonest_user_type", response.data.user_type);
-
       setError(null);
       navigate("/dashboard");
     } catch (err) {
       setError(err.response.data);
-      // TODO: handle error message
       console.log(error);
     }
   };

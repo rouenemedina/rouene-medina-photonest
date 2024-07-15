@@ -2,7 +2,7 @@ import "./PortfolioWork.scss";
 import React, { useState, useEffect } from "react";
 import getWorkDetailsData from "../../utils/getWorkDetailsData";
 
-function PortfolioWork({userId}) {
+function PortfolioWork({ userId }) {
   const [workDetails, setWorkDetails] = useState(null);
   const [loadingWorkDetails, setLoadingWorkDetails] = useState(true);
   const [error, setError] = useState(false);
@@ -20,21 +20,6 @@ function PortfolioWork({userId}) {
     getWorkDetails();
   }, []);
 
-  // useEffect(() => {
-  //   if (workDetails && workDetails.work_url) {
-  //     const img = new Image();
-  //     img.src = workDetails.work_url;
-  //     img.onload = () => {
-  //       const aspectRatio = img.naturalWidth / img.naturalHeight;
-  //       if (aspectRatio > 1) {
-  //         setImageOrientation("landscape");
-  //       } else {
-  //         setImageOrientation("portrait");
-  //       }
-  //     };
-  //   }
-  // }, [workDetails]);
-
   if (loadingWorkDetails) {
     return <p> Loading Portfolio Work Details data... </p>;
   }
@@ -43,7 +28,7 @@ function PortfolioWork({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  if(!workDetails || workDetails.length === 0){
+  if (!workDetails || workDetails.length === 0) {
     return;
   }
 
@@ -54,7 +39,7 @@ function PortfolioWork({userId}) {
         <section className="portfolio__container">
           {workDetails.map((work) => {
             return (
-              <article className="portfolio__card">
+              <article key={work.work_id} className="portfolio__card">
                 <img
                   src={work.work_url}
                   alt="featured work"

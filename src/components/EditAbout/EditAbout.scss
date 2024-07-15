@@ -79,4 +79,8 @@
       outline: none;
     }
   }
+
+  &__error {
+    color: $error;
+  }
 }

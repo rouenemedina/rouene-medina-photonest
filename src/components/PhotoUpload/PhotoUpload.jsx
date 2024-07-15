@@ -1,8 +1,5 @@
 import "./PhotoUpload.scss";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function PhotoUpload({ onFileChange }) {
   const [uploadImageURL, setUploadImageURL] = useState(null);
@@ -11,7 +8,7 @@ function PhotoUpload({ onFileChange }) {
   useEffect(() => {
     return () => {
       // Cleanup
-      if(uploadImageURL) {
+      if (uploadImageURL) {
         URL.revokeObjectURL(uploadImageURL);
       }
     };
@@ -30,10 +27,14 @@ function PhotoUpload({ onFileChange }) {
       <main>
         {uploadImageURL && (
           <section>
-            <img src={uploadImageURL} alt="uploaded image" className="photoUpload__img"></img>
+            <img
+              src={uploadImageURL}
+              alt="uploaded image"
+              className="photoUpload__img"
+            ></img>
           </section>
         )}
-        <input type="file" onChange={handleChange}/>
+        <input type="file" onChange={handleChange} />
       </main>
     </>
   );

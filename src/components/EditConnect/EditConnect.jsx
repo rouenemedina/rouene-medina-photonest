@@ -13,9 +13,7 @@ function EditConnect({ userId }) {
     connect_description: "",
     user_id: userId,
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -68,8 +66,6 @@ function EditConnect({ userId }) {
       setFormErrors({});
     }
 
-    //TODO add function to validate image data, check aspect ratio, or minimum dimensions, to make sure that my site won't break when a bad photo is uplaoded
-
     const updatedEditConnectFormData = new FormData();
     updatedEditConnectFormData.append(
       "connect_description",
@@ -109,7 +105,7 @@ function EditConnect({ userId }) {
             required
           ></textarea>
           {formErrors.connect_description && (
-            <span id="connectDescriptionError" className="editConnect__error">
+            <span className="editConnect__error">
               {formErrors.connect_description}
             </span>
           )}

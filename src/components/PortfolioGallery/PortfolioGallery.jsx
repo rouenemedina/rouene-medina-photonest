@@ -5,7 +5,7 @@ import getGalleryDetailsData from "../../utils/getGalleryDetailsData";
 
 Modal.setAppElement("#root");
 
-function PortfolioGallery({userId}) {
+function PortfolioGallery({ userId }) {
   const [galleryDetails, setGalleryDetails] = useState(null);
   const [loadingGalleryDetails, setLoadingGalleryDetails] = useState(true);
   const [error, setError] = useState(false);
@@ -43,7 +43,7 @@ function PortfolioGallery({userId}) {
     return <p>Error loading galleries. Please try again later.</p>;
   }
 
-  if(!galleryDetails || galleryDetails.length === 0){
+  if (!galleryDetails || galleryDetails.length === 0) {
     return;
   }
 
@@ -63,23 +63,16 @@ function PortfolioGallery({userId}) {
         })}
       </section>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        // overlayClassName="gallery__overlay"
-        className="gallery__modal"
-      >
-        <article className="gallery__content">
-          <span className="gallery__modal--close" onClick={closeModal}>
-            &times;
-          </span>
-          <img
-            src={selectedImage}
-            alt="full image"
-            className="gallery__fullimage"
-          />
-        </article>
-      </Modal>
+      {selectedImage && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <img src={selectedImage} alt="Full Size" />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

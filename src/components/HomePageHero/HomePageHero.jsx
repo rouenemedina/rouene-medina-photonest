@@ -21,7 +21,7 @@ function Hero() {
             </p>
           </div>
           <div className="hero__btn">
-            <Buttons showPrimary/>
+            <Buttons showPrimary />
           </div>
         </article>
       </section>

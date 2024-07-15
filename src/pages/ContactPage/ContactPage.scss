@@ -19,7 +19,6 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 2rem;
     justify-content: center;
     background-color: $background-gunmetal;
     }
@@ -32,38 +31,12 @@
     }
 
     &__card {
-        position: relative;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.3);
-        padding: 1.25rem 1.875rem;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 15px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+        display: flex;
+        padding: 2rem 1rem 0.5rem 1rem;
     }
 
     &__title {
-        position: relative;
-        font-size: 2rem;
-        font-weight: bold;
-        color: $background-gunmetal; /* Make text transparent */
-        // mix-blend-mode: screen; /* Blending mode to cut out the text */
-        z-index: 1;
-        background: inherit;
-        background-clip: text;
-        // mix-blend-mode: multiply;
-    
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: inherit; /* Inherit background from parent */
-            filter: blur(10px); /* Apply the same blur */
-            z-index: -1;
-        }
+        color: $primary-Timberwolf;
     }
 
     &__feature {

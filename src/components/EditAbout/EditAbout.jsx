@@ -13,9 +13,7 @@ function EditAbout({ userId }) {
     about_description: "",
     user_id: userId,
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [uploadedFile1, setUploadedFile1] = useState(null);
@@ -61,9 +59,15 @@ function EditAbout({ userId }) {
 
     const validate = (value) => {
       const errors = {};
-      if (!value.about_name || !value.about_description) {
-        errors.hero_description = "Please fill out the required field.";
+
+      if (!value.about_name) {
+        errors.about_name = "Please fill out the required field."
       }
+        
+      if (!value.about_description) {
+        errors.about_description = "Please fill out the required field."
+      }
+      
       return errors;
     };
 
@@ -99,7 +103,7 @@ function EditAbout({ userId }) {
       setError("Error uploading files. Please try again.");
     }
   };
-
+  
   return (
     <>
       <main className="editAbout">
@@ -117,7 +121,13 @@ function EditAbout({ userId }) {
               value={editAboutFormData.about_name}
               onChange={handleChange}
               placeholder="What should we call you?"
+              required
             />
+            {formErrors.about_name && (
+              <span className="editAbout__error">
+                {formErrors.about_name}
+              </span>
+            )}
           </section>
           <section className="editAbout__container">
             <label htmlFor="about_description" className="editAbout__label">
@@ -132,11 +142,11 @@ function EditAbout({ userId }) {
               onChange={handleChange}
               required
             ></textarea>
-            {/* {formErrors.about_description && (
-              <span id="aboutDescriptionError" className="editAbout__error">
+            {formErrors.about_description && (
+              <span className="editAbout__error">
                 {formErrors.about_description}
               </span>
-            )} */}
+            )}
           </section>
           <PhotoUpload onFileChange={handleFileChange2} />
           <Buttons showSubmit />

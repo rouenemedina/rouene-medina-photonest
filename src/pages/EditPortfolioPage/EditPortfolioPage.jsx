@@ -13,8 +13,6 @@ function EditPortfolioPage() {
   const navigate = useNavigate();
   const userId= sessionStorage.getItem("photonest_user_id");
   const userType = sessionStorage.getItem("photonest_user_type");
-  console.log(userType);
-
 
   useEffect(() => {
     if(!userId || userType !== "photographer"){

@@ -13,9 +13,7 @@ function ContactPage() {
     contact_email: "",
     contact_message: "",
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -36,8 +34,6 @@ function ContactPage() {
     console.log("entered submit");
     event.preventDefault();
 
-    //TODO: data validation
-
     const updatedContactFormData = {
       contact_name: contactFormData.contact_name,
       contact_email: contactFormData.contact_email,
@@ -49,11 +45,6 @@ function ContactPage() {
       await axios.post(`${API_URL}/contact`, updatedContactFormData);
       setSuccess(true);
       setError(null);
-
-      //TODO:
-      // create function to display successful message submission
-      // add timeout before redirect
-
       handleReset();
     } catch (err) {
       console.log(err);
@@ -77,11 +68,11 @@ function ContactPage() {
       <Header />
       <main className="contact">
         <section className="contact__section">
-          {/* <article className="contact__container">
+          <article className="contact__container">
             <div className="contact__card">
               <h1 className="contact__title">Contact Us</h1>
             </div>
-          </article> */}
+          </article>
           <ContactForm
             contactFormData={contactFormData}
             handleChange={handleChange}

@@ -6,10 +6,6 @@ import { useNavigate } from "react-router-dom";
 import PhotoUpload from "../PhotoUpload/PhotoUpload";
 import Buttons from "../Buttons/Buttons";
 
-//setup the forms
-//handle the change when there is a user input
-//handle submit or handle upload
-//handle errors
 const API_URL = import.meta.env.VITE_APP_API_URL;
 
 function EditHero({ userId }) {
@@ -17,9 +13,7 @@ function EditHero({ userId }) {
     hero_description: "",
     user_id: userId,
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -53,10 +47,6 @@ function EditHero({ userId }) {
     setRedirect(true);
   };
 
-  //to store the updated formData to a variable
-  //post endpoint
-  //handle reset
-
   const validate = (value) => {
     const errors = {};
     if (!value.hero_description) {
@@ -75,8 +65,6 @@ function EditHero({ userId }) {
     } else {
       setFormErrors({});
     }
-
-    //TODO add function to validate image data, check aspect ratio, or minimum dimensions, to make sure that my site won't break when a bad photo is uplaoded
 
     const updatedEditHeroFormData = new FormData();
     updatedEditHeroFormData.append(
@@ -117,7 +105,7 @@ function EditHero({ userId }) {
             required
           ></textarea>
           {formErrors.hero_description && (
-            <span id="heroDescriptionError" className="editHero__error">
+            <span className="editHero__error">
               {formErrors.hero_description}
             </span>
           )}

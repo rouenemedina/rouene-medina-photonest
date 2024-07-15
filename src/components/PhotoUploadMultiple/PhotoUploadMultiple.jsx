@@ -1,4 +1,3 @@
-import "./PhotoUploadMultiple.scss";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 

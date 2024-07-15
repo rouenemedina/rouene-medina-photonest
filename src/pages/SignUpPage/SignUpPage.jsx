@@ -14,9 +14,7 @@ function SignUpPage() {
     user_password: "",
     user_type: "photographer",
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -36,8 +34,6 @@ function SignUpPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //after submitting we want to check the data if its valid
-    //then updated formData to be sent to the server
     const errorOutput = validateFormData(formData);
     if (Object.keys(errorOutput).length === 0) {
       try {
@@ -58,12 +54,9 @@ function SignUpPage() {
         setSuccess(false);
         setError(error.response.data);
       }
-    } else {
-      //TODO: error handling
     }
   };
 
-  //validate formData
   const validateFormData = (data) => {
     const errors = {};
     if (!data.user_first_name)

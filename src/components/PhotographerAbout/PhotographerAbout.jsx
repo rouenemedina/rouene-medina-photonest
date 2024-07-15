@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import getAboutDetailsData from "../../utils/getAboutDetailsData";
 
-
-function PhotographerAbout({userId}) {
+function PhotographerAbout({ userId }) {
   const [aboutDetails, setAboutDetails] = useState(null);
   const [loadingWorkDetails, setLoadingWorkDetails] = useState(true);
   const [error, setError] = useState(false);
@@ -45,11 +44,15 @@ function PhotographerAbout({userId}) {
               className="photographer__photo"
             ></img>
             <Link to="/portfolio" className="photographer__link">
-              <h1 className="photographer__name">MEET "{aboutDetails[0].about_name}"</h1>
+              <h1 className="photographer__name">
+                MEET "{aboutDetails[0].about_name}"
+              </h1>
             </Link>
           </div>
           <div className="photographer__card">
-            <p className="photographer__description">{aboutDetails[0].about_description}</p>
+            <p className="photographer__description">
+              {aboutDetails[0].about_description}
+            </p>
             <img
               src={aboutDetails[1].about_url}
               alt="Image"

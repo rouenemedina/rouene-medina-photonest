@@ -27,24 +27,19 @@ function DashboardPage() {
     }
   }, [failedAuth]);
 
-  //login
-  //logout
   const login = async () => {
-    //check if there is a token
     const token = sessionStorage.getItem("token");
 
     if (!token) {
       return setFailedAuth(true);
     }
-    //get token
+
     try {
       const response = await axios.get(`${API_URL}/auth/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("entered login");
-      console.log(response.data);
       setUser(response.data);
       navigate("/dashboard");
     } catch (err) {
@@ -73,6 +68,7 @@ function DashboardPage() {
   };
 
   const resetPassword = () => {
+    //This is for nice-to-haves
     //logic to reset password
   };
 
@@ -85,9 +81,7 @@ function DashboardPage() {
       </main>
     );
   }
-  console.log(user);
 
-  //return the profile of the user (general: for photographers and clients);
   return (
     <div className="dashboard__wrapper">
       <Header />

@@ -29,7 +29,6 @@ function PortfolioPage() {
       return;
     }
 
-    //check if user has files in the database
     const checkUserFiles = async () => {
       try {
         const hasFiles = await getFilesChecker(isFromPhotographerRoute ? photographerUserId : userId);
@@ -46,7 +45,7 @@ function PortfolioPage() {
   if (loading) {
     return <p> Loading data... </p>;
   }
-  console.log();
+
   return (
     <>
       <Header />

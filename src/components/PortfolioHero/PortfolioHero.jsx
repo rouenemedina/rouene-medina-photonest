@@ -2,7 +2,7 @@ import "./PortfolioHero.scss";
 import React, { useEffect, useState } from "react";
 import getHeroDetailsData from "../../utils/getHeroDetailsData";
 
-function PortfolioHero({userId}) {
+function PortfolioHero({ userId }) {
   const [heroDetails, setHeroDetails] = useState(null);
   const [loadingHeroDetails, setLoadingHeroDetails] = useState(true);
   const [error, setError] = useState(false);
@@ -10,13 +10,13 @@ function PortfolioHero({userId}) {
 
   useEffect(() => {
     async function getHeroDetails() {
-        try{
-            setHeroDetails(await getHeroDetailsData(userId));
-            setLoadingHeroDetails(false);
-        } catch(err){
-            console.log("Error fetching data", err)
-            setError(true);
-        }
+      try {
+        setHeroDetails(await getHeroDetailsData(userId));
+        setLoadingHeroDetails(false);
+      } catch (err) {
+        console.log("Error fetching data", err);
+        setError(true);
+      }
     }
     getHeroDetails();
   }, []);
@@ -44,22 +44,22 @@ function PortfolioHero({userId}) {
     return <p> Something went wrong. Please try refreshing the page</p>;
   }
 
-  if(!heroDetails || heroDetails.length === 0){
+  if (!heroDetails || heroDetails.length === 0) {
     return;
   }
 
   return (
-      <main>
-        <section className="portfolio__hero">
-          <img
-            src={heroDetails.hero_url}
-            alt="featured photo"
-            className={`portfolio__feature portfolio__feature--${imageOrientation}`}
-          ></img>
-          <p className="portfolio__pitch">{heroDetails.hero_description}</p>
-        </section>
-      </main>
-    );
+    <main>
+      <section className="portfolio__hero">
+        <img
+          src={heroDetails.hero_url}
+          alt="featured photo"
+          className={`portfolio__feature portfolio__feature--${imageOrientation}`}
+        ></img>
+        <p className="portfolio__pitch">{heroDetails.hero_description}</p>
+      </section>
+    </main>
+  );
 }
 
 export default PortfolioHero;

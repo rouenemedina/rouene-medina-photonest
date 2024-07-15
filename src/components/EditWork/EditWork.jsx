@@ -14,9 +14,7 @@ function EditWork({ userId }) {
     work_title3: "",
     user_id: userId,
   });
-  //this is for handling errors in the form
   const [formErrors, setFormErrors] = useState({});
-  //this is for errors in the axios call
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [uploadedFile1, setUploadedFile1] = useState(null);
@@ -69,14 +67,20 @@ function EditWork({ userId }) {
 
     const validate = (value) => {
       const errors = {};
-      if (!value.work_title) {
-        errors.itemName = "Please fill out the required field.";
+      if (!value.work_title1) {
+        errors.work_title1 = "Please fill out the required field.";
+      }
+      if (!value.work_title2) {
+        errors.work_title2 = "Please fill out the required field.";
+      }
+      if (!value.work_title3) {
+        errors.work_title3 = "Please fill out the required field.";
       }
       return errors;
     };
 
     const errors = validate(editWorkFormData);
-    if (Object.keys(errors).length === 0) {
+    if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
       return;
     } else {
@@ -111,7 +115,7 @@ function EditWork({ userId }) {
       <h2 className="editWork__title">FEATURED WORK SECTION:</h2>
       <form className="editWork__form" onSubmit={handleSubmit}>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange1}/>
+          <PhotoUpload onFileChange={handleFileChange1} />
           <article className="editWork__card">
             <label htmlFor="work_title1" className="editWork__label">
               TITLE:
@@ -124,10 +128,13 @@ function EditWork({ userId }) {
               onChange={handleChange}
               placeholder="Work Title"
             />
+            {formErrors.work_title1 && (
+              <span className="editWork__error">{formErrors.work_title1}</span>
+            )}
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange2}/>
+          <PhotoUpload onFileChange={handleFileChange2} />
           <article className="editWork__card">
             <label htmlFor="work_title2" className="editWork__label">
               TITLE:
@@ -140,10 +147,13 @@ function EditWork({ userId }) {
               onChange={handleChange}
               placeholder="Work Title"
             />
+            {formErrors.work_title2 && (
+              <span className="editWork__error">{formErrors.work_title2}</span>
+            )}
           </article>
         </section>
         <section className="editWork__container">
-          <PhotoUpload onFileChange={handleFileChange3}/>
+          <PhotoUpload onFileChange={handleFileChange3} />
           <article className="editWork__card">
             <label htmlFor="work_title3" className="editWork__label">
               TITLE:
@@ -156,6 +166,9 @@ function EditWork({ userId }) {
               onChange={handleChange}
               placeholder="Work Title"
             />
+            {formErrors.work_title3 && (
+              <span className="editWork__error">{formErrors.work_title3}</span>
+            )}
           </article>
         </section>
         <Buttons showSubmit />

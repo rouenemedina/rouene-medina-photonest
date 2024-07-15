@@ -10,8 +10,6 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import EditPortfolioPage from './pages/EditPortfolioPage/EditPortfolioPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
-//TODO: change the landing page
-
 function App() {
 
   return (

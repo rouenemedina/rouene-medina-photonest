@@ -100,7 +100,7 @@ CONTACT PAGE
 ![Contact Page](<src/assets/mockup/Contact Form.png>)
 
 PHOTOGRAPHER PAGE
-
+![Photographer List Page](<src/assets/mockup/Photographer Page.png>)
 
 PORTFOLIO SECTION
 ![Portfoliio Page](src/assets/mockup/Portfolio.png)

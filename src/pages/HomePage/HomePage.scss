@@ -1,0 +1,33 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.homepage {
+  &__header {
+    background-image: url(../../assets/images/b-jason-leung-UMncYEfO9-U-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__logo {
+    display: none;
+
+    @include tablet {
+      width: 30rem;
+      height: 15rem;
+      box-sizing: border-box;
+      display: flex;
+      padding-top: 2.5rem;
+      margin: auto;
+    }
+
+    @include desktop {
+      width: 40rem;
+      height: 20rem;
+      box-sizing: border-box;
+      display: flex;
+      margin: auto;
+    }
+  }
+}

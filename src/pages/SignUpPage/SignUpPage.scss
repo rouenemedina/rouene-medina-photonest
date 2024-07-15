@@ -1,0 +1,100 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.registration {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/images/b-jason-leung-UMncYEfO9-U-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  @include tablet {
+    padding: 2.5rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end
+  }
+
+  @include desktop {
+    padding: 4rem 6rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    box-sizing: border-box;
+    width: 10rem;
+    height: 100%;
+
+    @include tablet {
+      width: 20rem;
+    }
+
+    @include desktop {
+      width: 40rem;
+    }
+  }
+
+  &__wrapper {
+    width: 60%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+    padding: 1.25rem 1.875rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+
+    @include tablet {
+      width: 38%;
+      padding: 2rem 3rem 2rem 3rem;
+    }
+
+    @include desktop {
+      width: 30%;
+      padding: 4rem 3rem 4rem 3rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    padding: 0.5rem;
+  }
+
+  &__title,
+  &__subtitle {
+    color: $primary-Timberwolf;
+  }
+
+  &__link {
+    color: $primary-Peachcrayon;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.editPortfolio {
+    &__title{
+        color: $primary-CharcoalBlue;
+        padding: 1rem 1.5rem 0 1.5rem;
+
+        @include tablet {
+            padding: 1.5rem 3rem 0 3rem;
+        }
+
+        @include desktop {
+            padding: 2rem 4.5rem 0 4.5rem;
+        }
+    }
+}

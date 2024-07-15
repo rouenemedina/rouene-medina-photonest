@@ -1,0 +1,78 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.list {
+
+  &__wrapper {
+    height: 100vh;
+    background-color: $secondary-alabaster;
+  }
+
+  &__container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+
+    @include tablet {
+      flex-direction: row;
+      padding: 2.5rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      padding: 4rem;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    text-align: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.875rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  &__img {
+    box-sizing: border-box;
+    width: 12rem;
+    height: 11rem;
+    object-fit: cover;
+    border-radius: 15px;
+
+    &--landscape {
+      object-position: center;
+    }
+
+    &--portrait {
+      object-position: center -8rem;
+    }
+
+    @include tablet {
+      width: 12.1875rem;
+      height: 15.75rem;
+    }
+
+    @include desktop {
+      width: 15rem;
+      height: 18rem;
+    }
+  }
+
+  &__link {
+    color: $primary-Peachcrayon;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

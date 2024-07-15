@@ -15,11 +15,11 @@ Photographers need a user-friendly and visually appealing platform to showcase t
 
 2 Types of Users:
 * Photographer: Users of the website will primarily be a photographer looking to showcase their work. 
-    * One page per photographer, that is accessible through their photos in the homepage. 
+    * One portfolio page per photographer, that is accessible through their a link from either the navigation bar or their names in the photographer's page. 
     * Showcase their work through the platform by uploading images.
     * The app must provide an intuitive interface for a photographer to upload and organize their photos.
+    * Communicate with potential clients through the contact form.
     * Engage in social interactions through comments and likes.
-    * Communicate with potential clients through the contact form. 
 
 * Client: Potential clients seeking to hire a photographer.
     * Browse through different portfolios
@@ -29,15 +29,23 @@ Photographers need a user-friendly and visually appealing platform to showcase t
 
 
 ### Features
-<!-- List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented. -->
-
 <!-- Put yourself as the user of your app and then what problems would you like to be solved. Describe it as much as possible-->
-* Login/Register: Pages for user authentication.
-* Photographer Profile: Photographer can create and manage personal profile.
-* Portfolio Creation: Photographer can upload and organize their photos into portfolios.
-* Portfolio Viewing: Visitors can browse portfolios by category, style, or photographer.
-* Contact Form: Potential clients can contact a photographer directly through a form.
-* Responsive Design: The website will be fully responsive to ensure a good user experience on all devices.
+* Register and Login: 
+    - Pages for user authentication.
+* Photographer Profile(Dashboard): 
+    - Photographer can create and manage personal profile.
+* Portfolio Creation: 
+    - Photographer can upload and organize their photos into portfolios. 
+    - Only users registered as "photographers" can create and edit portfolios. 
+    - Users who are registered as "clients" will be redirected to the not found page when they click on the edit portfolio navigation. 
+* Portfolio Viewing: 
+    - Visitors can browse portfolios by photographer. 
+    - Only registered users can browse portfolio of registered photographers. 
+    - Guests who did not register could only view the landing page and the contact page. 
+* Contact Form: 
+    - Potential clients can contact a photographer directly through a form.
+* Responsive Design: 
+    - The website will be fully responsive to ensure a good user experience on all devices.
 
 ## Implementation
 
@@ -59,24 +67,25 @@ MySQL with Knex.js for query building
 
 Client Libraries
 react
-react-router
+react-router-dom
+react-modal
 axios
+sass
+mui/icons-material
+mui/material
 
 Server libraries
 express
 
 External Libraries (Store and serve user-generated content like images)
-Microsoft Azure
 Cloudinary
-Firebase Storage
 
 Limitations:
-Cloudinary and Firebase Storage: Limitations in terms of storage space, API call limits, or bandwidth.
+Cloudinary: Limitations in terms of storage space, API call limits, or bandwidth.
 
 ### APIs
 
-Microsoft Onedrive API
-Cloudinary/Firebase Storage API: For image upload and management
+Cloudinary API: For image upload and management
 
 ### Sitemap
 <!-- List the pages of your app with brief descriptions. You can show this visually, or write it out. -->
@@ -104,25 +113,40 @@ PORTFOLIO SECTION
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->
 <!-- drawSQL to visualize relationships -->
-![Data](src/assets/mockup/Data.png)
+![Updated EER Diagram](src/assets/mockup/updated-eer-diagram.png)
 
 ### Endpoints
 <!-- In the final readMe can include the endpoint, short description, parameters, and response body -->
-* POST /api/auth/register: User registration.
-* POST /api/auth/login: User login.
+* GET /api/portfolio/:id: Retrieve a specific portfolio.
 
-* POST /api/portfolios: Create a new portfolio.
-* GET /api/portfolios: Retrieve portfolios.
-* GET /api/portfolios/: Retrieve a specific portfolio.
+* POST /api/upload: Upload an image.
 
-* POST /api/images: Upload an image.
-* GET /api/images/: Retrieve images for a specific portfolio.
+* GET/api/hero:
+* GET /api/herp/:user_id:
+* POST /api/herp/upload:
+
+* GET /api/work:
+* GET /api/work/:user_id:
+* POST /api/work/upload:
+
+* GET /api/about/:
+* GET /api/about/:user_id:
+* POST /api/about/upload:
+
+* GET /api/connect:
+* GET /api/connect/:user_id:
+* POST /api/connect/upload:
+
+* GET /api/gallery:
+* GET /api/gallery/:user_id:
+* POST /api/gallery/upload:
 
 * POST /api/contact: Send a message to a photographer.
 
 ### Auth
 * POST /api/auth/register: User registration.
 * POST /api/auth/login: User login.
+* GET /api/auth/profile: Retrieve user token.
 * GET /api/auth/logout: User logout.
 
 ## Roadmap
@@ -149,8 +173,6 @@ Week 2: Frontend Development and Integration
 <!-- Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing. -->
 
 Features:
-* Guest Login Page, this is where users don't have an account
-
 * Search Functionality: Visitors can search for a photographer by name, location, or specialty.
 * Advanced Search Filters: Allow visitors to filter a photographer by various criteria such as price range, location, and style.
 * Booking System: Enable clients to book sessions with a photographer directly through the website.

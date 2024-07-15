@@ -90,18 +90,21 @@ Cloudinary API: For image upload and management
 4. Contact Form: Form for visitors to contact a photographer.
 
 ### Mockups
+DASHBOARD PAGE
+![Dashhboard Page](src/assets/mockup/Dashboard.png)
+
 HOME PAGE
-![Home Page](src/assets/mockup/homePage.png)
+![Landing Page](src/assets/mockup/LandingPage.png)
 
 CONTACT PAGE
-![Contact and Login Page](src/assets/mockup/contact-loginPage.png)
+![Contact Page](<src/assets/mockup/Contact Form.png>)
 
-PROFILE PAGE
-![Profile Page Option1](src/assets/mockup/profilePage1.png)
-![Profile Page Option2](src/assets/mockup/profilePage2.png)
+PHOTOGRAPHER PAGE
+
 
 PORTFOLIO SECTION
-![Portfolio section](src/assets/mockup/portfolioView.png)
+![Portfoliio Page](src/assets/mockup/Portfolio.png)
+![Edit Portfolio Page](<src/assets/mockup/Equivalent Form for Portfolio.png>)
 
 ### Data
 ![Updated EER Diagram](src/assets/mockup/updated-eer-diagram.png)

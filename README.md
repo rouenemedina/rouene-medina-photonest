@@ -2,6 +2,10 @@
 PhotoNest
 Photographer Portfolio Showcase Website
 
+# Sample User:
+PHOTOGRAPHER: janeg@test.ca (1234)
+CLIENT: client@test.ca (123)
+
 ## Overview
 The website allows a photographer to create a profile and showcase their work through portfolios. It serves as a platform for a photographer to display their skills and for potential clients to browse and connect with them.
 

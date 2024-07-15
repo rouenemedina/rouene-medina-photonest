@@ -96,15 +96,15 @@ DASHBOARD PAGE
 HOME PAGE
 ![Landing Page](src/assets/mockup/LandingPage.png)
 
-CONTACT PAGE
-![Contact Page](<src/assets/mockup/Contact Form.png>)
-
 PHOTOGRAPHER PAGE
 ![Photographer List Page](<src/assets/mockup/Photographer Page.png>)
 
 PORTFOLIO SECTION
 ![Portfoliio Page](src/assets/mockup/Portfolio.png)
 ![Edit Portfolio Page](<src/assets/mockup/Equivalent Form for Portfolio.png>)
+
+CONTACT PAGE
+![Contact Page](<src/assets/mockup/Contact Form.png>)
 
 ### Data
 ![Updated EER Diagram](src/assets/mockup/updated-eer-diagram.png)

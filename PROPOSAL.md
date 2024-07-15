@@ -98,17 +98,21 @@ Cloudinary API: For image upload and management
 ### Mockups
 <!-- Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches. -->
 HOME PAGE
-![Home Page](src/assets/mockup/homePage.png)
+DASHBOARD PAGE
+![Dashhboard Page](src/assets/mockup/Dashboard.png)
 
-CONTACT PAGE
-![Contact and Login Page](src/assets/mockup/contact-loginPage.png)
+HOME PAGE
+![Landing Page](src/assets/mockup/LandingPage.png)
 
-PROFILE PAGE
-![Profile Page Option1](src/assets/mockup/profilePage1.png)
-![Profile Page Option2](src/assets/mockup/profilePage2.png)
+PHOTOGRAPHER PAGE
+![Photographer List Page](<src/assets/mockup/Photographer Page.png>)
 
 PORTFOLIO SECTION
-![Portfolio section](src/assets/mockup/portfolioView.png)
+![Portfoliio Page](src/assets/mockup/Portfolio.png)
+![Edit Portfolio Page](<src/assets/mockup/Equivalent Form for Portfolio.png>)
+
+CONTACT PAGE
+![Contact Page](<src/assets/mockup/Contact Form.png>)
 
 ### Data
 <!-- Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.  -->

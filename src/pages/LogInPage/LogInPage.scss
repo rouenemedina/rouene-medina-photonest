@@ -56,8 +56,17 @@
 
   &__subcard {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      flex-direction: row;
+    }
   }
 
   &__header,

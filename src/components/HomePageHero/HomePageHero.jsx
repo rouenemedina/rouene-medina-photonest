@@ -1,6 +1,7 @@
 import "./HomePageHero.scss";
 import React from "react";
 import Buttons from "../Buttons/Buttons";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -21,7 +22,9 @@ function Hero() {
             </p>
           </div>
           <div className="hero__btn">
-            <Buttons showPrimary />
+            <Link to="/login">
+              <Buttons showPrimary />
+            </Link>
           </div>
         </article>
       </section>

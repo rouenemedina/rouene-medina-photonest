@@ -1,8 +1,9 @@
 import "./HomePage.scss";
 import React from "react";
+import logoImg from "../../assets/logo/Logo-2.png";
 import Header from "../../components/Header/Header";
 import HomePageHero from "../../components/HomePageHero/HomePageHero";
-import logoImg from "../../assets/logo/Logo-2.png";
+import HomePageFeature from "../../components/HomePageFeature/HomePageFeature";
 
 function HomePage() {
   return (
@@ -11,6 +12,7 @@ function HomePage() {
         <Header />
         <img src={logoImg} className="homepage__logo"></img>
         <HomePageHero />
+        <HomePageFeature />
       </header>
     </>
   );

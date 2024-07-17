@@ -1,0 +1,70 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.homeFeature {
+  background-color: $background-gunmetal;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    position: relative;
+    display: flex;
+    background-color: $background-eerieblack;
+
+    @include desktop {
+        height: 46.875rem;
+    }
+  }
+
+  &__img {
+    box-sizing: border-box;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    font-family: "Archivo";
+    text-align: right;
+    color: $primary-Timberwolf;
+    padding: 2rem 1rem;
+    position: absolute;
+    width: 55%;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    
+
+    @include tablet {
+      width: 55%;
+      font-size: 1rem;
+      line-height: 1.675rem;
+      letter-spacing: 0.135rem;
+      right: 4rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include desktop {
+      width: 55%;
+      font-size: 1.25rem;
+      line-height: 1.675rem;
+      letter-spacing: 0.135rem;
+      right: 16rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

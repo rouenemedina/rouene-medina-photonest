@@ -2,15 +2,15 @@
 PhotoNest
 Photographer Portfolio Showcase Website
 
-# Sample User:
-PHOTOGRAPHER: janeg@test.ca (1234)
-CLIENT: client@test.ca (123)
-
 ## Overview
 The website allows a photographer to create a profile and showcase their work through portfolios. It serves as a platform for a photographer to display their skills and for potential clients to browse and connect with them.
 
 ### Problem
 Photographers need a user-friendly and visually appealing platform to showcase their work online. Existing platforms often lack the simplicity or are too complex for users to navigate and maintain. This can make it difficult for photographers to effectively present their portfolios and attract potential clients. The challenge is to develop a website that combines ease of use and aesthetic appeal to meet the needs of photographers.
+
+### Sample User:
+PHOTOGRAPHER: janeg@test.ca (1234)
+CLIENT: client@test.ca (123)
 
 ### User Profile
 2 Types of Users:
@@ -90,18 +90,21 @@ Cloudinary API: For image upload and management
 4. Contact Form: Form for visitors to contact a photographer.
 
 ### Mockups
+DASHBOARD PAGE
+![Dashhboard Page](src/assets/mockup/Dashboard.png)
+
 HOME PAGE
-![Home Page](src/assets/mockup/homePage.png)
+![Landing Page](src/assets/mockup/LandingPage.png)
 
-CONTACT PAGE
-![Contact and Login Page](src/assets/mockup/contact-loginPage.png)
-
-PROFILE PAGE
-![Profile Page Option1](src/assets/mockup/profilePage1.png)
-![Profile Page Option2](src/assets/mockup/profilePage2.png)
+PHOTOGRAPHER PAGE
+![Photographer List Page](<src/assets/mockup/Photographer Page.png>)
 
 PORTFOLIO SECTION
-![Portfolio section](src/assets/mockup/portfolioView.png)
+![Portfoliio Page](src/assets/mockup/Portfolio.png)
+![Edit Portfolio Page](<src/assets/mockup/Equivalent Form for Portfolio.png>)
+
+CONTACT PAGE
+![Contact Page](<src/assets/mockup/Contact Form.png>)
 
 ### Data
 ![Updated EER Diagram](src/assets/mockup/updated-eer-diagram.png)

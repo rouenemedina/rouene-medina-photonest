@@ -26,6 +26,7 @@
     &__container {
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -48,5 +49,19 @@
         box-sizing: border-box;
         width: 100%;
         height: 100%;
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__success {
+        color: $primary-Timberwolf;
+    }
+
+    &__error {
+        color: $primary-Timberwolf;
+        background-color: $error;
     }
 }

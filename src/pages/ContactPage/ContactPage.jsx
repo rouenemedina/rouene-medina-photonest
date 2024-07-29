@@ -21,7 +21,9 @@ function ContactPage() {
 
   useEffect(() => {
     if (redirect) {
-      navigate("/home");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     }
   }, [redirect, navigate]);
 
@@ -71,6 +73,10 @@ function ContactPage() {
           <article className="contact__container">
             <div className="contact__card">
               <h1 className="contact__title">Contact Us</h1>
+            </div>
+            <div className="contact__message">
+            {success && <p className="contact__success">Message sent successfully! Redirecting...</p>}
+            {error && <p className="contact__error">{error}</p>}
             </div>
           </article>
           <ContactForm
